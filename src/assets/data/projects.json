@@ -1,0 +1,28 @@
+[
+  {
+    "slug": "payment-ds",
+    "title": "Payment Platform payment-ds",
+    "summary": "A Java full-stack payment system, covering the design and delivery of both the frontend console and the backend transaction API.",
+    "stack": ["Java", "Spring Boot", "Angular", "Kubernetes", "Jenkins"],
+    "highlights": [
+      "Designed and implemented the core interaction flow between the payment-ds-console frontend and the payment-ds-api backend",
+      "Contributed to CI/CD pipeline setup, automating deployment with Jenkins + Kubernetes",
+      "Led containerization efforts, unifying deployment configuration across dev/test/prod environments"
+    ],
+    "role": "Java Full-Stack Engineer",
+    "period": "2022 - Present"
+  },
+  {
+    "slug": "resume-rag-assistant",
+    "title": "Resume RAG Assistant (In Progress)",
+    "summary": "A retrieval-augmented Q&A assistant built with Spring AI + pgvector, letting recruiters ask it directly about my project experience.",
+    "stack": ["Spring AI", "pgvector", "Ollama", "Spring Boot"],
+    "highlights": [
+      "Vectorized my resume and project docs to build a searchable knowledge base",
+      "Structured information extraction using llama3.2:3b, with temperature 0.1 for stable output",
+      "My first hands-on project in transitioning to AI Engineer"
+    ],
+    "role": "Personal Project",
+    "period": "2026"
+  }
+]

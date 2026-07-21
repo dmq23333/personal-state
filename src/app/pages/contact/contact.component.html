@@ -1,0 +1,50 @@
+<section class="contact">
+  <h1>Contact</h1>
+  <p>Have a role to discuss, or interested in one of my projects? Feel free to leave a message.</p>
+
+  <form [formGroup]="form" (ngSubmit)="submit()" novalidate>
+    <div class="field">
+      <label for="name">Name</label>
+      <input id="name" type="text" formControlName="name" />
+      @if (f.name.invalid && f.name.touched) {
+        <span class="error">Please enter your name</span>
+      }
+    </div>
+
+    <div class="field">
+      <label for="email">Email</label>
+      <input id="email" type="email" formControlName="email" />
+      @if (f.email.invalid && f.email.touched) {
+        <span class="error">Please enter a valid email</span>
+      }
+    </div>
+
+    <!-- Honeypot field: hidden via CSS, real users never see or fill it -->
+    <div class="field honeypot" aria-hidden="true">
+      <label for="company">Company</label>
+      <input id="company" type="text" formControlName="company" tabindex="-1" autocomplete="off" />
+    </div>
+
+    <div class="field">
+      <label for="message">Message</label>
+      <textarea id="message" rows="5" formControlName="message"></textarea>
+      @if (f.message.invalid && f.message.touched) {
+        <span class="error">Message must be at least 10 characters</span>
+      }
+    </div>
+
+    <button type="submit" [disabled]="state() === 'sending'">
+      @switch (state()) {
+        @case ('sending') { Sending… }
+        @default { Send }
+      }
+    </button>
+
+    @if (state() === 'success') {
+      <p class="status success">Received — I'll get back to you soon.</p>
+    }
+    @if (state() === 'error') {
+      <p class="status error">Send failed, please try again later, or email me directly at you&#64;example.com</p>
+    }
+  </form>
+</section>

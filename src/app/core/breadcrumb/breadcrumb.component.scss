@@ -1,0 +1,20 @@
+.breadcrumb {
+  padding: 0.75rem 2rem;
+  font-size: 0.85rem;
+  color: #666;
+
+  a {
+    color: #666;
+    text-decoration: none;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+  .sep {
+    margin: 0 0.4rem;
+  }
+  .current {
+    color: #111;
+    font-weight: 500;
+  }
+}
