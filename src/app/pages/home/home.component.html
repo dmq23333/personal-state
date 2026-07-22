@@ -1,17 +1,18 @@
 <div class="home-container">
   <!-- Hero Section -->
   <section class="hero-section">
+    <!-- Left: Content -->
     <div class="hero-content">
       <div class="hero-badge">
         <span class="material-symbols-outlined">handshake</span>
         <span>Hello, I'm Mengqi Deng</span>
       </div>
       <h1 class="hero-title">
-        Building Robust <br/>
-        <span class="text-primary italic">Full-Stack</span> Solutions
+        Engineering Scalable <br/>
+        <span class="text-primary">Fullstack</span> Solutions
       </h1>
       <p class="hero-description">
-        I am a Java Full-Stack Engineer specializing in building scalable web applications with Spring Boot on the backend and modern frameworks on the frontend. Blending technical precision with elegant design.
+        I am a Java Fullstack Engineer specializing in building robust, performant web applications. From microservices architecture to fluid user interfaces, I blend technical precision with the soft aesthetics of modern design.
       </p>
       <div class="hero-actions">
         <button class="btn btn-primary" (click)="resumeModalOpen.set(true)">
@@ -24,12 +25,10 @@
       </div>
     </div>
 
-    <!-- Bento Style Profile Cards -->
+    <!-- Right: Bento Grid -->
     <div class="bento-grid">
-      <div class="bento-card bento-main glass-card">
-        <div class="profile-image">
-          <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBRTwY-6-R5d9fYv3bSaGG-A_c5hU5iPzkPOxyGwPrhbE_QhD_DIcDGq1CJUWKjfn1fCan_-tX7XjDHE5e75B-2HkEsrh62Ec8AbiNo6GzrOgcmSKmjv8L2z5R5AiWphqDSQ71t4SP0zOhi302SewlfyTIvJ5AJICreEC75TGh1lYRPVUslEoHdl4FiXuqYhBpOdGqWw79KIPzvizljDltB1ekvHKbTlKp2Ts7UhDLOzSMEQwn7xki5" alt="Professional portrait"/>
-        </div>
+      <div class="bento-main glass-card">
+        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBRTwY-6-R5d9fYv3bSaGG-A_c5hU5iPzkPOxyGwPrhbE_QhD_DIcDGq1CJUWKjfn1fCan_-tX7XjDHE5e75B-2HkEsrh62Ec8AbiNo6GzrOgcmSKmjv8L2z5R5AiWphqDSQ71t4SP0zOhi302SewlfyTIvJ5AJICreEC75TGh1lYRPVUslEoHdl4FiXuqYhBpOdGqWw79KIPzvizljDltB1ekvHKbTlKp2Ts7UhDLOzSMEQwn7xki5" alt="Professional portrait"/>
       </div>
       <div class="bento-card bento-stat bg-primary-fixed text-on-primary-fixed">
         <div class="stat-value">5+</div>
@@ -42,7 +41,7 @@
     </div>
   </section>
 
-  <!-- Expertise Section (Bento Grid) -->
+  <!-- Expertise Section -->
   <section class="expertise-section">
     <div class="section-header">
       <span class="section-label">Expertise</span>
@@ -51,7 +50,7 @@
 
     <div class="expertise-grid">
       <!-- Java Backend Card -->
-      <div class="expertise-card expertise-card-large bg-surface border border-outline-variant">
+      <div class="expertise-card expertise-card-large">
         <div class="card-icon bg-primary-fixed text-primary">
           <span class="material-symbols-outlined">code</span>
         </div>
@@ -67,7 +66,7 @@
       </div>
 
       <!-- Frontend Dev Card -->
-      <div class="expertise-card expertise-card-large bg-secondary-fixed-dim/20 border border-outline-variant">
+      <div class="expertise-card expertise-card-large">
         <div class="card-icon bg-secondary-fixed text-secondary">
           <span class="material-symbols-outlined">web</span>
         </div>
@@ -83,24 +82,24 @@
       </div>
 
       <!-- DevOps Card -->
-      <div class="expertise-card bg-surface border border-outline-variant">
+      <div class="expertise-card">
         <span class="material-symbols-outlined icon-lg text-primary">cloud</span>
         <h4>DevOps</h4>
         <p>Docker, Kubernetes, and cloud deployment solutions.</p>
       </div>
 
       <!-- UI Design Card -->
-      <div class="expertise-card bg-surface border border-outline-variant">
+      <div class="expertise-card">
         <span class="material-symbols-outlined icon-lg text-secondary">palette</span>
         <h4>UI Design</h4>
         <p>Figma-first workflow and Pastel Modernism design system.</p>
       </div>
 
       <!-- Testing Card -->
-      <div class="expertise-card expertise-card-large bg-surface border border-outline-variant">
-        <div style="display: flex; gap: 1.5rem; align-items: center;">
-          <div class="w-16 h-16 bg-tertiary-fixed rounded-full flex items-center justify-center flex-shrink-0">
-            <span class="material-symbols-outlined text-tertiary">check_circle</span>
+      <div class="expertise-card expertise-card-large">
+        <div class="card-flex">
+          <div class="card-icon-lg bg-tertiary-fixed text-tertiary">
+            <span class="material-symbols-outlined">check_circle</span>
           </div>
           <div>
             <h4>Quality First</h4>

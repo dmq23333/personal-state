@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
-import { NAV_ITEMS } from '../nav.config';
+import { NAV_ITEMS } from './nav.config';
 
 @Component({
   selector: 'app-breadcrumb',
