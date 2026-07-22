@@ -1,0 +1,329 @@
+@use '../../../styles/colors' as *;
+
+.projects-container {
+  background-color: $background;
+  color: $on-surface;
+}
+
+// Hero Section
+.projects-hero {
+  position: relative;
+  padding: $spacing-xl 0;
+  overflow: hidden;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 10;
+  max-width: 800px;
+
+  h1 {
+    font-size: $font-headline-lg;
+    font-weight: 700;
+    line-height: $font-headline-lg-line;
+    margin-bottom: $spacing-md;
+  }
+
+  p {
+    font-size: $font-body-lg;
+    line-height: $font-body-lg-line;
+    color: $on-surface-variant;
+    max-width: 650px;
+  }
+}
+
+// Background accents
+.bg-accent-1,
+.bg-accent-2 {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.2;
+  blur: blur(60px);
+  pointer-events: none;
+}
+
+.bg-accent-1 {
+  top: -96px;
+  right: -96px;
+  width: 384px;
+  height: 384px;
+  background-color: $primary-fixed;
+  filter: blur(60px);
+}
+
+.bg-accent-2 {
+  top: 50%;
+  left: -96px;
+  width: 256px;
+  height: 256px;
+  background-color: $secondary-fixed;
+  filter: blur(60px);
+}
+
+// Projects Grid
+.projects-grid-section {
+  padding: $spacing-lg 0;
+}
+
+.projects-bento {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: $spacing-gutter;
+
+  @media (max-width: 1024px) {
+    grid-template-columns: repeat(6, 1fr);
+  }
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.bento-card {
+  background-color: $surface-container-low;
+  border: 1px solid rgba($outline-variant, 0.3);
+  border-radius: 16px;
+  overflow: hidden;
+  transition: all 0.5s ease;
+  display: flex;
+  flex-direction: column;
+
+  &:hover {
+    border-color: rgba($primary, 0.5);
+    box-shadow: 0 12px 32px rgba($primary, 0.1);
+
+    .card-image img {
+      transform: scale(1.03);
+    }
+  }
+
+  &.bento-large {
+    grid-column: span 8;
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+
+    @media (max-width: 1024px) {
+      grid-column: span 6;
+      grid-template-columns: 1fr;
+    }
+
+    @media (max-width: 768px) {
+      grid-column: span 1;
+    }
+
+    .card-content {
+      display: contents;
+    }
+  }
+
+  &.bento-medium {
+    grid-column: span 4;
+
+    @media (max-width: 1024px) {
+      grid-column: span 6;
+    }
+
+    @media (max-width: 768px) {
+      grid-column: span 1;
+    }
+  }
+}
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.card-image {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  min-height: 300px;
+
+  .bento-large & {
+    min-height: auto;
+  }
+
+  .bento-medium & {
+    min-height: 200px;
+  }
+}
+
+.image-placeholder {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.7s ease;
+}
+
+.card-text {
+  padding: $spacing-lg;
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-md;
+  flex-grow: 1;
+
+  h3 {
+    font-size: $font-headline-md;
+    font-weight: 600;
+    line-height: $font-headline-md-line;
+    color: $on-surface;
+  }
+
+  p {
+    font-size: $font-body-md;
+    line-height: $font-body-md-line;
+    color: $on-surface-variant;
+  }
+}
+
+.card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $spacing-xs;
+
+  .tag {
+    padding: $spacing-xs $spacing-sm;
+    background-color: rgba($primary-container, 0.2);
+    color: $on-primary-fixed-variant;
+    border-radius: 9999px;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+}
+
+.card-footer {
+  display: flex;
+  align-items: center;
+  gap: $spacing-sm;
+  margin-top: auto;
+  padding-top: $spacing-md;
+
+  .link-primary,
+  .link-icon {
+    display: flex;
+    align-items: center;
+    gap: $spacing-xs;
+    text-decoration: none;
+    color: $primary;
+    font-size: $font-label-md;
+    font-weight: 700;
+    transition: all 0.3s ease;
+
+    &:hover {
+      gap: $spacing-md;
+    }
+  }
+
+  .link-icon {
+    color: $on-surface-variant;
+    font-weight: normal;
+
+    &:hover {
+      color: $primary;
+    }
+  }
+
+  .divider {
+    color: $outline-variant;
+  }
+
+  .material-symbols-outlined {
+    font-size: 20px;
+  }
+}
+
+// CTA Section
+.cta-section {
+  padding: $spacing-xl 0;
+}
+
+.cta-card {
+  background-color: rgba($primary-fixed, 0.3);
+  border: 1px solid rgba($primary-fixed-dim, 0.2);
+  border-radius: 24px;
+  padding: $spacing-xl;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: $spacing-md;
+
+  h2 {
+    font-size: $font-headline-lg;
+    font-weight: 700;
+    line-height: $font-headline-lg-line;
+    color: $on-primary-fixed;
+  }
+
+  p {
+    font-size: $font-body-lg;
+    line-height: $font-body-lg-line;
+    color: $on-primary-fixed-variant;
+    max-width: 600px;
+  }
+
+  @media (max-width: 768px) {
+    padding: $spacing-lg;
+
+    h2 {
+      font-size: $font-headline-md;
+    }
+
+    p {
+      font-size: $font-body-md;
+    }
+  }
+}
+
+.cta-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: $spacing-md;
+  padding-top: $spacing-md;
+}
+
+// Buttons
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: $spacing-sm;
+  padding: $spacing-md $spacing-lg;
+  border: none;
+  border-radius: 9999px;
+  font-size: $font-label-md;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: inherit;
+
+  &.btn-primary {
+    background-color: $primary;
+    color: $on-primary;
+
+    &:hover {
+      box-shadow: 0 8px 24px rgba($primary, 0.3);
+    }
+  }
+
+  &.btn-secondary {
+    background-color: $surface;
+    color: $primary;
+    border: 1px solid rgba($primary, 0.2);
+
+    &:hover {
+      background-color: $surface-container-low;
+    }
+  }
+}
+
+// Utility classes
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  vertical-align: middle;
+}

@@ -1,0 +1,116 @@
+// Pastel Modernism Design System Colors
+// Auto-generated from DESIGN.md
+
+// Primary Colors
+$primary: #695476;
+$on-primary: #ffffff;
+$primary-container: #826c90;
+$on-primary-container: #fffbff;
+$inverse-primary: #d7bde5;
+
+// Secondary Colors
+$secondary: #7c5264;
+$on-secondary: #ffffff;
+$secondary-container: #ffc8dd;
+$on-secondary-container: #7b5163;
+
+// Tertiary Colors
+$tertiary: #874861;
+$on-tertiary: #ffffff;
+$tertiary-container: #a4607a;
+$on-tertiary-container: #fffbff;
+
+// Error Colors
+$error: #ba1a1a;
+$on-error: #ffffff;
+$error-container: #ffdad6;
+$on-error-container: #93000a;
+
+// Surface Colors
+$surface: #f6f9ff;
+$on-surface: #001e2f;
+$surface-variant: #cae6ff;
+$on-surface-variant: #414753;
+$inverse-surface: #0c334b;
+$inverse-on-surface: #e6f2ff;
+
+// Surface Containers
+$surface-container-lowest: #ffffff;
+$surface-container-low: #ebf5ff;
+$surface-container: #e0f0ff;
+$surface-container-high: #d5ebff;
+$surface-container-highest: #cae6ff;
+$surface-bright: #f6f9ff;
+$surface-dim: #bbdefc;
+$surface-tint: #6b5779;
+
+// Outline Colors
+$outline: #717785;
+$outline-variant: #c1c6d5;
+
+// Background
+$background: #f6f9ff;
+$on-background: #001e2f;
+
+// Fixed Colors
+$primary-fixed: #f3daff;
+$primary-fixed-dim: #d7bde5;
+$on-primary-fixed: #251432;
+$on-primary-fixed-variant: #533f60;
+
+$secondary-fixed: #ffd8e6;
+$secondary-fixed-dim: #edb8cc;
+$on-secondary-fixed: #301020;
+$on-secondary-fixed-variant: #623b4c;
+
+$tertiary-fixed: #ffd9e4;
+$tertiary-fixed-dim: #ffb0cd;
+$on-tertiary-fixed: #390720;
+$on-tertiary-fixed-variant: #6e334c;
+
+// Spacing (base unit = 8px)
+$spacing-xs: 4px;
+$spacing-sm: 8px;
+$spacing-md: 16px;
+$spacing-lg: 24px;
+$spacing-xl: 32px;
+$spacing-base: 8px;
+$spacing-gutter: 16px;
+$spacing-margin: 24px;
+
+// Border Radius
+$radius-sm: 0.25rem;
+$radius-default: 0.5rem;
+$radius-md: 0.75rem;
+$radius-lg: 1rem;
+$radius-xl: 1.5rem;
+$radius-full: 9999px;
+
+// Typography
+$font-family-base: 'Inter', sans-serif;
+$font-headline-lg: 32px;
+$font-headline-lg-weight: 700;
+$font-headline-lg-line: 40px;
+
+$font-headline-md: 24px;
+$font-headline-md-weight: 600;
+$font-headline-md-line: 32px;
+
+$font-body-lg: 16px;
+$font-body-lg-weight: 400;
+$font-body-lg-line: 24px;
+
+$font-body-md: 14px;
+$font-body-md-weight: 400;
+$font-body-md-line: 20px;
+
+$font-label-md: 12px;
+$font-label-md-weight: 500;
+$font-label-md-line: 16px;
+
+// Shadows
+$shadow-soft-glow: 0 10px 40px -10px rgba(105, 84, 118, 0.1);
+$shadow-glass: 1px solid rgba(255, 255, 255, 0.3);
+
+// Gradients
+$gradient-hero: linear-gradient(135deg, #f3daff 0%, #ffd8e6 100%);

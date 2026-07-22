@@ -1,7 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { RouterLink } from '@angular/router';
-import { toSignal } from '@angular/core/rxjs-interop';
-import { BreadcrumbService } from './breadcrumb.service';
+import { Component } from '@angular/core';
+import { Router, RouterLink } from '@angular/router';
+import { NAV_ITEMS } from '../nav.config';
 
 @Component({
   selector: 'app-breadcrumb',
@@ -9,12 +8,14 @@ import { BreadcrumbService } from './breadcrumb.service';
   templateUrl: './breadcrumb.component.html',
   styleUrls: ['./breadcrumb.component.scss']
 })
-export class BreadcrumbComponent implements OnInit {
-  crumbs = toSignal(this.breadcrumbService.crumbs$(), {
-    initialValue: []
-  });
+export class BreadcrumbComponent {
+  navItems = NAV_ITEMS;
 
-  constructor(private breadcrumbService: BreadcrumbService) { }
+  constructor(private router: Router) { }
 
-  ngOnInit(): void { }
+  isActive(path: string): boolean {
+    return this.router.url === path || (path !== '/' && this.router.url.startsWith(path));
+  }
 }
+
+

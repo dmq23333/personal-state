@@ -1,0 +1,115 @@
+<div class="about-container">
+  <!-- Hero Section -->
+  <section class="about-hero">
+    <div class="about-content">
+      <div class="about-badge">
+        <span>✓</span>
+        Available for opportunities
+      </div>
+      <h1 class="about-heading">Designing the future of digital interactions.</h1>
+      <p class="about-description">
+        I am a forward-thinking developer specializing in high-end UI design and robust architectural systems. My approach blends the clarity of modern functionalism with soft, ethereal aesthetics to create memorable user experiences.
+      </p>
+      <div class="about-stats">
+        <div class="stat">
+          <div class="stat-value">5+</div>
+          <div class="stat-label">Years Exp.</div>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <div class="stat-value">40+</div>
+          <div class="stat-label">Projects</div>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <div class="stat-value">12</div>
+          <div class="stat-label">Awards</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="about-image-container">
+      <div class="image-bg"></div>
+      <div class="image-wrapper">
+        <img
+          src="https://lh3.googleusercontent.com/aida-public/AB6AXuCUgqJsnkdQrRx_G3HcJEVjRQGS1eQk8KIBzJmkqynISZvpmiNp0_wSxt_mcXLSs0L9IA_640TbG4kFXsaiMDx4qBiUvgXFX9WgqSnZvja3WKAt4NIGBwCBLkiBpszm-I1pQks1Q0PcMIg9rMK7GGco3UC_GsSH8sLI0xuhe5kW7ujSWy3OhGdrRnkw-zuu1gQHWdKsN57rz7VNtiCKwfMUwGbmL-rZ2Y8BaScFD0czXrQUkbAtLb3S"
+          alt="Professional portrait"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- Competencies & Work Experience -->
+  <section class="competencies-section">
+    <div class="competencies-card">
+      <div class="section-header">
+        <span class="material-symbols-outlined material-icon">psychology</span>
+        <h2>Competencies</h2>
+      </div>
+      <div class="competency-tags">
+        @for (skill of competencies; track skill) {
+          <div class="tag">{{ skill }}</div>
+        }
+      </div>
+      <div class="quote-box">
+        "Crafting digital products that feel as good as they look."
+      </div>
+    </div>
+
+    <div class="work-experience-card">
+      <div class="section-header">
+        <div>
+          <span class="material-symbols-outlined material-icon">work</span>
+          <h2>Work Experience</h2>
+        </div>
+      </div>
+      <div class="experience-list">
+        @for (job of workExperience; track job.company) {
+          <div class="experience-item">
+            <div class="job-header">
+              <div class="job-title">{{ job.title }}</div>
+              <div class="job-period">{{ job.period }}</div>
+            </div>
+            <div class="company">{{ job.company }}</div>
+            <p class="job-description">{{ job.description }}</p>
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Education Timeline -->
+  <section class="education-section">
+    <div class="section-intro">
+      <span class="material-symbols-outlined material-icon">school</span>
+      <h2>Academic Journey</h2>
+      <p>Continuous learning is the backbone of innovation. My educational background combines technical rigor with creative exploration.</p>
+    </div>
+
+    <div class="timeline">
+      <div class="timeline-line"></div>
+      <div class="education-items">
+        @for (edu of education; track edu.institution) {
+          <div class="education-item">
+            <div class="date-badge">{{ edu.year }}</div>
+            <div class="timeline-dot"></div>
+            <div class="education-card">
+              <div class="degree">{{ edu.degree }}</div>
+              <div class="institution">{{ edu.institution }}</div>
+              <p class="description">{{ edu.description }}</p>
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="cta-content">
+      <h2>Let's build something exceptional together.</h2>
+      <p>Currently open to freelance collaborations and full-time creative leadership roles.</p>
+      <button>Hire Me</button>
+    </div>
+  </section>
+</div>

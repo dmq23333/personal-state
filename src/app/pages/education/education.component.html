@@ -1,0 +1,123 @@
+<div class="education-container">
+  <!-- Hero Section -->
+  <section class="education-hero">
+    <span class="material-symbols-outlined hero-icon">school</span>
+    <h1 class="hero-title">Education & Professional Development</h1>
+    <p class="hero-subtitle">
+      A foundation of rigorous academic training combined with continuous professional growth in emerging technologies and design methodologies.
+    </p>
+  </section>
+
+  <!-- Main Content: Degrees and Skills -->
+  <section class="education-main">
+    <!-- Degrees Timeline -->
+    <div class="education-degrees">
+      <div class="section-header">
+        <span class="material-symbols-outlined material-icon">school</span>
+        <h2>Academic Degrees</h2>
+      </div>
+
+      <div class="timeline">
+        @for (degree of educationItems; track degree.institution) {
+          <div class="degree-item">
+            <div class="degree-title">{{ degree.degree }}</div>
+            <div class="institution">{{ degree.institution }}</div>
+            <div class="year">{{ degree.year }}</div>
+            @if (degree.specialization) {
+              <div class="specialization">{{ degree.specialization }}</div>
+            }
+            <div class="description">{{ degree.description }}</div>
+          </div>
+        }
+      </div>
+    </div>
+
+    <!-- Skills Section -->
+    <div class="skills-section">
+      <!-- Key Skills Card -->
+      <div class="skills-card">
+        <div class="card-header">
+          <span class="material-symbols-outlined material-icon">star</span>
+          <h3>Key Skills</h3>
+        </div>
+        <div class="skills-grid">
+          @for (skill of keySkills; track skill) {
+            <div class="skill-tag">{{ skill }}</div>
+          }
+        </div>
+      </div>
+
+      <!-- Certifications Card -->
+      <div class="certifications-card">
+        <div class="card-header">
+          <span class="material-symbols-outlined material-icon">verified</span>
+          <h3>Certifications</h3>
+        </div>
+        <div class="certification-items">
+          @for (cert of certifications; track cert.issuer) {
+            <div class="cert-item">
+              <div class="cert-title">{{ cert.title }}</div>
+              <div class="cert-issuer">{{ cert.issuer }}</div>
+              <div class="cert-year">{{ cert.year }}</div>
+            </div>
+          }
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Coursework Section -->
+  <section class="coursework-section">
+    <div class="section-title">
+      <span class="material-symbols-outlined material-icon">library_books</span>
+      Relevant Coursework
+    </div>
+    <div class="coursework-grid">
+      @for (course of coursework; track course) {
+        <div class="course-card">{{ course }}</div>
+      }
+    </div>
+  </section>
+
+  <!-- Highlights Section -->
+  <section class="highlights-section">
+    <div class="section-title">Professional Highlights</div>
+    <div class="highlights-grid">
+      <div class="highlight-item">
+        <div class="highlight-icon">🎯</div>
+        <div class="highlight-content">
+          <div class="highlight-title">Specialized Expertise</div>
+          <div class="highlight-description">Deep knowledge in human-computer interaction, cognitive ergonomics, and immersive interface design.</div>
+        </div>
+      </div>
+      <div class="highlight-item">
+        <div class="highlight-icon">🏆</div>
+        <div class="highlight-content">
+          <div class="highlight-title">Distinguished Achievement</div>
+          <div class="highlight-description">Graduated with Distinguished Honors and actively participated in AI Research Lab at MIT.</div>
+        </div>
+      </div>
+      <div class="highlight-item">
+        <div class="highlight-icon">🚀</div>
+        <div class="highlight-content">
+          <div class="highlight-title">Continuous Learning</div>
+          <div class="highlight-description">Pursuing professional certifications in product management and latest technologies to stay ahead of the curve.</div>
+        </div>
+      </div>
+      <div class="highlight-item">
+        <div class="highlight-icon">💡</div>
+        <div class="highlight-content">
+          <div class="highlight-title">Full-Stack Mastery</div>
+          <div class="highlight-description">Comprehensive skills spanning algorithmic efficiency, full-stack development, system architecture, and machine learning.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <h2>Ready to collaborate on innovative projects?</h2>
+    <p>My diverse educational background and technical expertise enable me to tackle complex challenges and deliver exceptional results.</p>
+    <button>Get In Touch</button>
+  </section>
+</div>

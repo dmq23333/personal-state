@@ -1,13 +1,12 @@
 import { Component, OnInit, signal } from '@angular/core';
 
-import { RouterLink } from '@angular/router';
 import { ProjectService } from '../../core/services/project.service';
 import { Project } from '../../shared/models/project.model';
 import { ResumeRequestDialogComponent } from './resume-request/resume-request-dialog.component';
 
 @Component({
   selector: 'app-home',
-  imports: [RouterLink, ResumeRequestDialogComponent],
+  imports: [ResumeRequestDialogComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })

@@ -1,20 +1,102 @@
-.breadcrumb {
-  padding: 0.75rem 2rem;
-  font-size: 0.85rem;
-  color: #666;
+@use '../../../styles/colors' as *;
+
+.breadcrumb-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background-color: rgba($surface, 0.8);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba($outline-variant, 0.2);
+}
+
+.breadcrumb-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: $spacing-md $spacing-margin;
+  gap: $spacing-lg;
+
+  @media (max-width: 768px) {
+    padding: $spacing-md $spacing-margin;
+  }
+}
+
+.breadcrumb-brand {
+  flex-shrink: 0;
 
   a {
-    color: #666;
+    font-size: $font-headline-md;
+    font-weight: 700;
+    color: $primary;
     text-decoration: none;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: $primary-container;
+    }
   }
-  a:hover {
-    text-decoration: underline;
+}
+
+.breadcrumb-center {
+  display: flex;
+  align-items: center;
+  gap: $spacing-lg;
+  flex: 1;
+  justify-content: center;
+
+  @media (max-width: 768px) {
+    display: none;
   }
-  .sep {
-    margin: 0 0.4rem;
+}
+
+.nav-link {
+  font-size: $font-body-lg;
+  font-weight: $font-body-lg-weight;
+  color: $on-surface-variant;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+
+  &:hover {
+    color: $primary;
   }
-  .current {
-    color: #111;
-    font-weight: 500;
+
+  &.active {
+    font-weight: 700;
+    color: $primary;
+    border-bottom: 2px solid $primary;
+    padding-bottom: 4px;
+  }
+}
+
+.btn-contact {
+  display: inline-block;
+  padding: $spacing-sm $spacing-lg;
+  background-color: $primary;
+  color: $on-primary;
+  border-radius: 9999px;
+  font-size: $font-label-md;
+  font-weight: $font-label-md-weight;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  flex-shrink: 0;
+  border: none;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $primary-container;
+    transform: scale(1.05);
+  }
+
+  &:active {
+    transform: scale(0.95);
+  }
+
+  @media (max-width: 768px) {
+    padding: $spacing-xs $spacing-md;
+    font-size: 11px;
   }
 }

@@ -9,6 +9,12 @@ export const routes: Routes = [
     data: { breadcrumb: 'Home' }
   },
   {
+    path: 'projects',
+    loadComponent: () =>
+      import('./pages/projects/projects.component').then((m) => m.ProjectsComponent),
+    data: { breadcrumb: 'Projects' }
+  },
+  {
     path: 'projects/:slug',
     loadComponent: () =>
       import('./pages/projects/project-detail/project-detail.component').then(
@@ -21,6 +27,18 @@ export const routes: Routes = [
     loadComponent: () =>
       import('./pages/contact/contact.component').then((m) => m.ContactComponent),
     data: { breadcrumb: 'Contact' }
+  },
+  {
+    path: 'about',
+    loadComponent: () =>
+      import('./pages/about/about.component').then((m) => m.AboutComponent),
+    data: { breadcrumb: 'About' }
+  },
+  {
+    path: 'education',
+    loadComponent: () =>
+      import('./pages/education/education.component').then((m) => m.EducationComponent),
+    data: { breadcrumb: 'Education' }
   },
   { path: '**', redirectTo: '' }
 ];

@@ -1,34 +1,18 @@
-.site-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 1.25rem 2rem;
-  border-bottom: 1px solid #e5e5e5;
+@use '../styles/colors' as *;
 
-  .brand {
-    font-weight: 600;
-    text-decoration: none;
-    color: inherit;
-  }
-
-  nav a {
-    margin-left: 1.5rem;
-    text-decoration: none;
-    color: inherit;
-  }
-}
-
-main {
+.site-main {
   min-height: 60vh;
-  padding: 2rem;
-  max-width: 960px;
-  margin: 0 auto;
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  box-sizing: border-box;
 }
 
 .site-footer {
-  padding: 1.5rem 2rem;
-  border-top: 1px solid #e5e5e5;
-  font-size: 0.85rem;
-  color: #666;
+  padding: $spacing-xl $spacing-margin;
+  border-top: 1px solid rgba($outline-variant, 0.2);
+  font-size: $font-label-md;
+  color: $on-surface-variant;
   text-align: center;
+  margin-top: auto;
 }

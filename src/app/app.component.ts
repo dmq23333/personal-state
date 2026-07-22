@@ -1,30 +1,20 @@
 import { Component } from '@angular/core';
-import { RouterOutlet, RouterLink } from '@angular/router';
+import { RouterOutlet } from '@angular/router';
 import { BreadcrumbComponent } from './core/breadcrumb/breadcrumb.component';
 
 @Component({
-    selector: 'app-root',
-    imports: [RouterOutlet, RouterLink, BreadcrumbComponent],
-    template: `
-    <header class="site-header">
-      <a class="brand" routerLink="/">Your Name</a>
-      <nav>
-        <a routerLink="/">Home</a>
-        <a routerLink="/contact">Contact</a>
-      </nav>
-    </header>
-
+  selector: 'app-root',
+  imports: [RouterOutlet, BreadcrumbComponent],
+  template: `
     <app-breadcrumb />
-
-    <main>
+    <main class="site-main">
       <router-outlet />
     </main>
-
     <footer class="site-footer">
-      <span>&copy; {{ year }} Your Name</span>
+      <span>&copy; {{ year }} Mengqi Deng</span>
     </footer>
   `,
-    styleUrl: './app.component.scss'
+  styleUrl: './app.component.scss'
 })
 export class AppComponent {
   year = new Date().getFullYear();

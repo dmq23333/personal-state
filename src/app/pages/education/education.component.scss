@@ -1,0 +1,359 @@
+@use '../../../styles/colors' as *;
+
+.education-container {
+  background-color: $background;
+  color: $on-surface;
+  font-family: $font-family-base;
+}
+
+.education-hero {
+  text-align: center;
+  padding: $spacing-xl 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: $spacing-lg;
+
+  .hero-icon {
+    font-size: 56px;
+    color: $tertiary-container;
+  }
+
+  .hero-title {
+    font-size: $font-headline-lg;
+    font-weight: $font-headline-lg-weight;
+    line-height: $font-headline-lg-line;
+  }
+
+  .hero-subtitle {
+    font-size: $font-body-lg;
+    line-height: $font-body-lg-line;
+    color: $on-surface-variant;
+    max-width: 600px;
+  }
+}
+
+.education-main {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: $spacing-gutter;
+  margin: $spacing-xl 0;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
+
+  .education-degrees {
+    background-color: $surface-container;
+    border-radius: $radius-lg;
+    padding: $spacing-lg;
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-md;
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: $spacing-sm;
+
+      .material-icon {
+        font-size: 28px;
+        color: $primary;
+      }
+
+      h2 {
+        font-size: $font-headline-md;
+        font-weight: $font-headline-md-weight;
+      }
+    }
+
+    .timeline {
+      position: relative;
+      padding-left: $spacing-lg;
+      border-left: 3px solid $primary-fixed-dim;
+      display: flex;
+      flex-direction: column;
+      gap: $spacing-lg;
+
+      .degree-item {
+        .degree-title {
+          font-size: $font-body-lg;
+          font-weight: 700;
+          color: $on-surface;
+          margin-bottom: $spacing-xs;
+        }
+
+        .institution {
+          font-size: $font-body-md;
+          color: $primary;
+          margin-bottom: $spacing-xs;
+        }
+
+        .year {
+          font-size: $font-label-md;
+          color: $outline;
+          margin-bottom: $spacing-sm;
+        }
+
+        .specialization {
+          font-size: $font-body-md;
+          font-style: italic;
+          color: $secondary;
+          margin-bottom: $spacing-sm;
+        }
+
+        .description {
+          font-size: $font-body-md;
+          color: $on-surface-variant;
+          line-height: $font-body-md-line;
+        }
+      }
+    }
+  }
+
+  .skills-section {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-lg;
+
+    .skills-card {
+      background-color: $surface-container-low;
+      border-radius: $radius-lg;
+      padding: $spacing-lg;
+
+      .card-header {
+        display: flex;
+        align-items: center;
+        gap: $spacing-sm;
+        margin-bottom: $spacing-md;
+
+        .material-icon {
+          font-size: 28px;
+          color: $secondary;
+        }
+
+        h3 {
+          font-size: $font-headline-md;
+          font-weight: $font-headline-md-weight;
+        }
+      }
+
+      .skills-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: $spacing-sm;
+
+        .skill-tag {
+          background-color: $secondary-fixed;
+          color: $on-secondary-fixed;
+          padding: $spacing-sm $spacing-md;
+          border-radius: $radius-full;
+          font-size: $font-label-md;
+          font-weight: $font-label-md-weight;
+          text-align: center;
+          transition: all 0.3s ease;
+
+          &:hover {
+            background-color: $tertiary-fixed;
+            color: $on-tertiary-fixed;
+            transform: translateY(-2px);
+          }
+        }
+      }
+    }
+
+    .certifications-card {
+      background-color: $tertiary-fixed;
+      border-radius: $radius-lg;
+      padding: $spacing-lg;
+
+      .card-header {
+        display: flex;
+        align-items: center;
+        gap: $spacing-sm;
+        margin-bottom: $spacing-md;
+
+        .material-icon {
+          font-size: 28px;
+          color: $tertiary;
+        }
+
+        h3 {
+          font-size: $font-headline-md;
+          font-weight: $font-headline-md-weight;
+          color: $on-tertiary-fixed;
+        }
+      }
+
+      .certification-items {
+        display: flex;
+        flex-direction: column;
+        gap: $spacing-md;
+
+        .cert-item {
+          background-color: rgba(255, 255, 255, 0.3);
+          padding: $spacing-md;
+          border-radius: $radius-default;
+          border-left: 3px solid $tertiary;
+
+          .cert-title {
+            font-size: $font-body-lg;
+            font-weight: 700;
+            color: $on-tertiary-fixed;
+            margin-bottom: $spacing-xs;
+          }
+
+          .cert-issuer {
+            font-size: $font-body-md;
+            color: $on-tertiary-fixed;
+            opacity: 0.9;
+            margin-bottom: $spacing-xs;
+          }
+
+          .cert-year {
+            font-size: $font-label-md;
+            color: $on-tertiary-fixed;
+            opacity: 0.7;
+          }
+        }
+      }
+    }
+  }
+}
+
+.coursework-section {
+  margin: $spacing-xl 0;
+
+  .section-title {
+    font-size: $font-headline-md;
+    font-weight: $font-headline-md-weight;
+    margin-bottom: $spacing-lg;
+    display: flex;
+    align-items: center;
+    gap: $spacing-sm;
+
+    .material-icon {
+      font-size: 28px;
+      color: $primary;
+    }
+  }
+
+  .coursework-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: $spacing-md;
+
+    .course-card {
+      background: linear-gradient(135deg, $primary-fixed 0%, $secondary-fixed 100%);
+      color: $on-primary-fixed;
+      padding: $spacing-lg;
+      border-radius: $radius-lg;
+      text-align: center;
+      transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      font-weight: 500;
+
+      &:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 12px 32px rgba($primary, 0.15);
+      }
+    }
+  }
+}
+
+.highlights-section {
+  background-color: $surface-container-low;
+  border-radius: $radius-lg;
+  padding: $spacing-xl;
+  margin: $spacing-xl 0;
+
+  .section-title {
+    font-size: $font-headline-md;
+    font-weight: $font-headline-md-weight;
+    margin-bottom: $spacing-lg;
+  }
+
+  .highlights-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: $spacing-lg;
+
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+    }
+
+    .highlight-item {
+      display: flex;
+      gap: $spacing-md;
+
+      .highlight-icon {
+        flex-shrink: 0;
+        width: 48px;
+        height: 48px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: $primary-fixed;
+        border-radius: $radius-lg;
+        color: $primary;
+        font-size: 24px;
+      }
+
+      .highlight-content {
+        flex-grow: 1;
+
+        .highlight-title {
+          font-size: $font-body-lg;
+          font-weight: 600;
+          color: $on-surface;
+          margin-bottom: $spacing-xs;
+        }
+
+        .highlight-description {
+          font-size: $font-body-md;
+          color: $on-surface-variant;
+        }
+      }
+    }
+  }
+}
+
+.cta-section {
+  background: linear-gradient(135deg, $primary 0%, $secondary 100%);
+  border-radius: 32px;
+  padding: $spacing-xl;
+  text-align: center;
+  color: white;
+  margin: $spacing-xl 0;
+
+  h2 {
+    font-size: $font-headline-lg;
+    font-weight: $font-headline-lg-weight;
+    margin-bottom: $spacing-md;
+  }
+
+  p {
+    font-size: $font-body-lg;
+    margin-bottom: $spacing-lg;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 0.95;
+  }
+
+  button {
+    background-color: white;
+    color: $primary;
+    padding: $spacing-md $spacing-xl;
+    border-radius: $radius-full;
+    font-size: $font-label-md;
+    font-weight: $font-label-md-weight;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    }
+  }
+}

@@ -1,0 +1,81 @@
+<div class="projects-container">
+  <!-- Hero Section -->
+  <section class="projects-hero">
+    <div class="hero-content">
+      <h1>Selected Works</h1>
+      <p>A curated collection of full-stack solutions built with modern web technologies, cloud architecture, and scalable backend systems.</p>
+    </div>
+    <!-- Atmospheric background elements -->
+    <div class="bg-accent-1"></div>
+    <div class="bg-accent-2"></div>
+  </section>
+
+  <!-- Projects Grid -->
+  <section class="projects-grid-section">
+    <div class="projects-bento">
+      @for (project of projects(); let idx = $index; track project.slug) {
+        @if (idx === 0) {
+          <!-- First project: Large featured card -->
+          <div class="bento-card bento-large project-card">
+            <div class="card-content">
+              <div class="card-image">
+                <div class="image-placeholder" style="background: linear-gradient(135deg, #f3daff 0%, #ffd8e6 100%);"></div>
+              </div>
+              <div class="card-text">
+                <div class="card-tags">
+                  @for (tech of project.stack; track tech) {
+                    <span class="tag">{{ tech }}</span>
+                  }
+                </div>
+                <h3>{{ project.title }}</h3>
+                <p>{{ project.summary }}</p>
+                <div class="card-footer">
+                  <a [routerLink]="['/projects', project.slug]" class="link-primary">
+                    View Project <span class="material-symbols-outlined">arrow_forward</span>
+                  </a>
+                  <span class="divider">|</span>
+                  <a href="#" class="link-icon">
+                    <span class="material-symbols-outlined">code</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        } @else {
+          <!-- Other projects: Medium cards -->
+          <div class="bento-card bento-medium project-card">
+            <div class="card-image">
+              <div class="image-placeholder" style="background: linear-gradient(135deg, #e0f0ff 0%, #ffc8dd 100%);"></div>
+            </div>
+            <div class="card-text">
+              <div class="card-tags">
+                @for (tech of project.stack; track tech) {
+                  <span class="tag">{{ tech }}</span>
+                }
+              </div>
+              <h3>{{ project.title }}</h3>
+              <p>{{ project.summary }}</p>
+              <div class="card-footer">
+                <a [routerLink]="['/projects', project.slug]" class="link-primary">
+                  Details <span class="material-symbols-outlined">open_in_new</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        }
+      }
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="cta-card">
+      <h2>Interested in collaborating?</h2>
+      <p>I'm currently available for freelance opportunities and full-time engineering roles. Let's build something beautiful together.</p>
+      <div class="cta-actions">
+        <button class="btn btn-primary">Start a Project</button>
+        <button class="btn btn-secondary">Download CV</button>
+      </div>
+    </div>
+  </section>
+</div>

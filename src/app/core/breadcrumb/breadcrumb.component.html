@@ -1,12 +1,24 @@
-@if (crumbs().length > 1) {
-  <nav class="breadcrumb" aria-label="Breadcrumb">
-    @for (crumb of crumbs(); track crumb.url; let last = $last) {
-      @if (!last) {
-        <a [routerLink]="crumb.url">{{ crumb.label }}</a>
-        <span class="sep">/</span>
-      } @else {
-        <span class="current" aria-current="page">{{ crumb.label }}</span>
+<header class="breadcrumb-header">
+  <nav class="breadcrumb-nav">
+    <!-- Left: Brand -->
+    <div class="breadcrumb-brand">
+      <a [routerLink]="'/'">DevPortfolio</a>
+    </div>
+
+    <!-- Center: Navigation Links -->
+    <div class="breadcrumb-center">
+      @for (item of navItems; track item.path) {
+        <a [routerLink]="item.path"
+           [class.active]="isActive(item.path)"
+           class="nav-link">
+          {{ item.label }}
+        </a>
       }
-    }
+    </div>
+
+    <!-- Right: Contact Button -->
+    <a [routerLink]="'/contact'" class="btn-contact">
+      Contact Me
+    </a>
   </nav>
-}
+</header>

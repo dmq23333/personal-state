@@ -1,0 +1,475 @@
+@use '../../../styles/colors' as *;
+
+.about-container {
+  background-color: $background;
+  color: $on-surface;
+  font-family: $font-family-base;
+}
+
+.about-hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: $spacing-gutter;
+  align-items: center;
+  padding: $spacing-xl 0;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.about-content {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-md;
+  order: 1;
+
+  @media (max-width: 768px) {
+    order: 2;
+  }
+}
+
+.about-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: $spacing-xs;
+  background-color: $secondary-container;
+  color: $on-secondary-container;
+  padding: $spacing-xs $spacing-md;
+  border-radius: $radius-full;
+  font-size: $font-label-md;
+  width: fit-content;
+}
+
+.about-heading {
+  font-size: $font-headline-lg;
+  font-weight: $font-headline-lg-weight;
+  line-height: $font-headline-lg-line;
+  background: linear-gradient(135deg, $primary, $secondary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.about-description {
+  font-size: $font-body-lg;
+  line-height: $font-body-lg-line;
+  color: $on-surface-variant;
+  max-width: 600px;
+}
+
+.about-stats {
+  display: flex;
+  gap: $spacing-sm;
+  padding-top: $spacing-md;
+
+  .stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .stat-value {
+      font-size: $font-headline-md;
+      font-weight: $font-headline-md-weight;
+      color: $primary;
+    }
+
+    .stat-label {
+      font-size: $font-label-md;
+      color: $outline;
+    }
+
+    .stat-divider {
+      width: 1px;
+      height: 48px;
+      background-color: $outline-variant;
+      margin: 0 $spacing-md;
+    }
+  }
+}
+
+.about-image-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  order: 2;
+
+  @media (max-width: 768px) {
+    order: 1;
+  }
+
+  .image-bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: $primary-fixed-dim;
+    border-radius: 48px;
+    opacity: 0.2;
+    transform: rotate(3deg) scale(1.05);
+    transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+
+  .image-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 420px;
+    aspect-ratio: 1;
+    border-radius: 40px;
+    overflow: hidden;
+    border: 4px solid $surface-container;
+    box-shadow: 0 4px 16px rgba($primary, 0.1);
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    &:hover {
+      .image-bg {
+        transform: rotate(6deg) scale(1.05);
+      }
+    }
+  }
+}
+
+.competencies-section {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: $spacing-gutter;
+  margin: $spacing-xl 0;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
+
+  .competencies-card {
+    background-color: $surface-container-low;
+    border-radius: $radius-lg;
+    padding: $spacing-lg;
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-md;
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: $spacing-sm;
+
+      .material-icon {
+        color: $primary;
+        font-size: 28px;
+      }
+
+      h2 {
+        font-size: $font-headline-md;
+        font-weight: $font-headline-md-weight;
+      }
+    }
+
+    .competency-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: $spacing-xs;
+
+      .tag {
+        background-color: $primary-fixed;
+        color: $on-primary-fixed;
+        padding: $spacing-xs $spacing-sm;
+        border-radius: $radius-full;
+        font-size: $font-label-md;
+        font-weight: $font-label-md-weight;
+        transition: all 0.3s ease;
+        cursor: pointer;
+
+        &:hover {
+          background-color: $secondary-fixed;
+          color: $on-secondary-fixed;
+        }
+      }
+    }
+
+    .quote-box {
+      padding: $spacing-md;
+      background-color: rgba(255, 255, 255, 0.5);
+      border-radius: $radius-default;
+      border: 1px solid rgba($outline-variant, 0.3);
+      margin-top: $spacing-lg;
+      font-size: $font-label-md;
+      color: $on-surface-variant;
+      font-style: italic;
+    }
+  }
+
+  .work-experience-card {
+    background-color: $surface-container;
+    border-radius: $radius-lg;
+    padding: $spacing-lg;
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-md;
+    position: relative;
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: relative;
+      z-index: 10;
+
+      h2 {
+        font-size: $font-headline-md;
+        font-weight: $font-headline-md-weight;
+        display: flex;
+        align-items: center;
+        gap: $spacing-sm;
+
+        .material-icon {
+          color: $secondary;
+          font-size: 28px;
+        }
+      }
+    }
+
+    .experience-list {
+      display: flex;
+      flex-direction: column;
+      gap: $spacing-lg;
+      position: relative;
+      z-index: 10;
+
+      .experience-item {
+        border-left: 2px solid $secondary-fixed-dim;
+        padding-left: $spacing-lg;
+
+        &:last-child {
+          border-left-color: rgba($secondary-fixed-dim, 0.4);
+        }
+
+        .job-header {
+          display: flex;
+          justify-content: space-between;
+          align-items: flex-start;
+          margin-bottom: $spacing-xs;
+
+          .job-title {
+            font-size: $font-body-lg;
+            font-weight: 700;
+            color: $on-surface;
+          }
+
+          .job-period {
+            font-size: $font-label-md;
+            color: $secondary;
+          }
+        }
+
+        .company {
+          font-size: $font-body-md;
+          color: $primary;
+        }
+
+        .job-description {
+          font-size: $font-body-md;
+          color: $on-surface-variant;
+          margin-top: $spacing-sm;
+        }
+      }
+    }
+  }
+}
+
+.education-section {
+  margin: $spacing-xl 0;
+  text-align: center;
+
+  .section-intro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: $spacing-sm;
+    margin-bottom: $spacing-lg;
+
+    .material-icon {
+      font-size: 40px;
+      color: $tertiary-container;
+    }
+
+    h2 {
+      font-size: $font-headline-lg;
+      font-weight: $font-headline-lg-weight;
+    }
+
+    p {
+      font-size: $font-body-lg;
+      color: $on-surface-variant;
+      max-width: 600px;
+    }
+  }
+
+  .timeline {
+    position: relative;
+    padding: $spacing-lg 0;
+
+    .timeline-line {
+      display: none;
+      position: absolute;
+      left: 50%;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background-color: rgba($outline-variant, 0.3);
+      transform: translateX(-50%);
+
+      @media (min-width: 768px) {
+        display: block;
+      }
+    }
+
+    .education-items {
+      display: flex;
+      flex-direction: column;
+      gap: $spacing-xl;
+      position: relative;
+
+      .education-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: $spacing-gutter;
+
+        @media (min-width: 768px) {
+          flex-direction: row;
+
+          &:nth-child(even) {
+            flex-direction: row-reverse;
+          }
+        }
+
+        .date-badge {
+          font-size: $font-label-md;
+          font-weight: $font-label-md-weight;
+          padding: $spacing-xs $spacing-md;
+          background-color: $tertiary-fixed;
+          color: $on-tertiary-fixed;
+          border-radius: $radius-full;
+          width: fit-content;
+
+          @media (min-width: 768px) {
+            width: 50%;
+            text-align: right;
+
+            &:nth-child(3n-2) {
+              text-align: right;
+            }
+
+            &:nth-child(3n-1) {
+              text-align: left;
+            }
+          }
+        }
+
+        .timeline-dot {
+          width: 16px;
+          height: 16px;
+          border-radius: 50%;
+          background-color: $tertiary;
+          border: 4px solid $surface-container-high;
+          box-shadow: 0 0 0 4px white;
+          position: relative;
+          z-index: 10;
+
+          @media (min-width: 768px) {
+            width: 100%;
+            text-align: center;
+          }
+        }
+
+        .education-card {
+          background-color: rgba(246, 249, 255, 0.7);
+          backdrop-filter: blur(12px);
+          border: 1px solid rgba($outline, 0.1);
+          padding: $spacing-lg;
+          border-radius: $radius-lg;
+          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+          transition: box-shadow 0.3s ease;
+          width: 100%;
+
+          @media (min-width: 768px) {
+            width: 50%;
+          }
+
+          &:hover {
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+          }
+
+          .degree {
+            font-size: $font-headline-md;
+            font-weight: $font-headline-md-weight;
+            color: $on-surface;
+            margin-bottom: $spacing-xs;
+          }
+
+          .institution {
+            font-size: $font-body-lg;
+            color: $primary;
+          }
+
+          .description {
+            font-size: $font-body-md;
+            color: $on-surface-variant;
+            margin-top: $spacing-sm;
+          }
+        }
+      }
+    }
+  }
+}
+
+.cta-section {
+  background-color: $inverse-surface;
+  border-radius: 32px;
+  padding: $spacing-xl;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  margin: $spacing-xl 0;
+
+  .cta-content {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-md;
+
+    h2 {
+      font-size: $font-headline-lg;
+      font-weight: $font-headline-lg-weight;
+      color: white;
+    }
+
+    p {
+      font-size: $font-body-lg;
+      color: $inverse-on-surface;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    button {
+      background-color: $primary-fixed;
+      color: $on-primary-fixed;
+      padding: $spacing-md $spacing-xl;
+      border-radius: $radius-full;
+      font-size: $font-headline-md;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      width: fit-content;
+      margin: $spacing-md auto 0;
+
+      &:hover {
+        background-color: white;
+      }
+    }
+  }
+}
