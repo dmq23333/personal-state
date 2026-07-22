@@ -297,47 +297,6 @@
   }
 }
 
-// CTA Section
-.cta-section {
-  padding: $spacing-xl;
-  background:
-    linear-gradient(135deg, rgba($primary-fixed, 0.72) 0%, rgba($secondary-fixed, 0.68) 100%),
-    $surface-container-low;
-  border-radius: 40px;
-  text-align: center;
-  color: $on-surface;
-  margin: $spacing-xl 0;
-  border: 1px solid rgba($outline-variant, 0.9);
-  box-shadow: $shadow-soft-glow;
-
-  h2 {
-    font-size: $font-headline-lg;
-    font-weight: 700;
-    line-height: $font-headline-lg-line;
-    margin-bottom: $spacing-md;
-    color: $on-surface;
-  }
-
-  p {
-    font-size: $font-body-lg;
-    line-height: $font-body-lg-line;
-    margin-bottom: $spacing-lg;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-    color: $on-surface-variant;
-    opacity: 1;
-  }
-}
-
-.cta-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: $spacing-md;
-  justify-content: center;
-  padding-top: $spacing-md;
-}
-
 // Button Styles
 .btn {
   display: inline-flex;
@@ -380,30 +339,6 @@
     }
   }
 
-  &.btn-cta-primary {
-    background-color: $primary;
-    color: $on-primary;
-    border: 1px solid rgba($primary, 0.16);
-    padding: $spacing-md $spacing-xl;
-
-    &:hover {
-      scale: 1.05;
-      box-shadow: 0 8px 24px rgba($primary, 0.28);
-    }
-  }
-
-  &.btn-cta-secondary {
-    background-color: rgba($surface-container-lowest, 0.75);
-    color: $on-surface;
-    backdrop-filter: blur(12px);
-    border: 1px solid rgba($outline-variant, 0.9);
-    padding: $spacing-md $spacing-xl;
-
-    &:hover {
-      background-color: $surface-container-lowest;
-      border-color: $outline;
-    }
-  }
 }
 
 .glass-card {

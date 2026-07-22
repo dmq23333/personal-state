@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AboutService, WorkExperience, Education } from './about.service';
+import { CareerCtaComponent } from '../../shared/components/career-cta/career-cta.component';
 
 @Component({
   selector: 'app-about',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, CareerCtaComponent],
   templateUrl: './about.component.html',
   styleUrl: './about.component.scss'
 })

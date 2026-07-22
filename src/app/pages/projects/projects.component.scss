@@ -237,57 +237,6 @@
   }
 }
 
-// CTA Section
-.cta-section {
-  padding: $spacing-xl 0;
-}
-
-.cta-card {
-  background-color: rgba($primary-fixed, 0.3);
-  border: 1px solid rgba($primary-fixed-dim, 0.2);
-  border-radius: 24px;
-  padding: $spacing-xl;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  gap: $spacing-md;
-
-  h2 {
-    font-size: $font-headline-lg;
-    font-weight: 700;
-    line-height: $font-headline-lg-line;
-    color: $on-primary-fixed;
-  }
-
-  p {
-    font-size: $font-body-lg;
-    line-height: $font-body-lg-line;
-    color: $on-primary-fixed-variant;
-    max-width: 600px;
-  }
-
-  @media (max-width: 768px) {
-    padding: $spacing-lg;
-
-    h2 {
-      font-size: $font-headline-md;
-    }
-
-    p {
-      font-size: $font-body-md;
-    }
-  }
-}
-
-.cta-actions {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: $spacing-md;
-  padding-top: $spacing-md;
-}
-
 // Buttons
 .btn {
   display: inline-flex;

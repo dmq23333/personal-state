@@ -2,9 +2,12 @@ import { Component, OnDestroy, OnInit, signal } from '@angular/core';
 
 import { ProjectService } from '../../core/services/project.service';
 import { Project } from '../../shared/models/project.model';
+import { CareerCtaComponent } from '../../shared/components/career-cta/career-cta.component';
 
 @Component({
   selector: 'app-home',
+  standalone: true,
+  imports: [CareerCtaComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
