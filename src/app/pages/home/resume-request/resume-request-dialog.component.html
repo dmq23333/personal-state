@@ -1,0 +1,30 @@
+<div class="modal-overlay" (click)="onClose.emit()">
+  <div class="modal-content" (click)="$event.stopPropagation()">
+    <h2>Request Resume</h2>
+    <form [formGroup]="form" (ngSubmit)="submit()">
+      <div class="field">
+        <label for="email">Email</label>
+        <input id="email" type="email" formControlName="email" />
+        @if (form.get('email')?.invalid && form.get('email')?.touched) {
+          <span class="error">Please enter a valid email</span>
+        }
+      </div>
+      <div class="actions">
+        <button type="submit" [disabled]="submitState() === 'sending'">
+          @switch (submitState()) {
+            @case ('sending') { Sending… }
+            @default { Send Resume }
+          }
+        </button>
+        <button type="button" (click)="onClose.emit()">Cancel</button>
+      </div>
+      @if (submitState() === 'success') {
+        <p class="status success">Resume sent — check your email!</p>
+      }
+      @if (submitState() === 'error') {
+        <p class="status error">Failed to send. Please try again or contact me directly.</p>
+      }
+    </form>
+    <button class="close" (click)="onClose.emit()">✕</button>
+  </div>
+</div>
