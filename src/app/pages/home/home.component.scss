@@ -18,12 +18,12 @@
 // Hero Section
 .hero-section {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: $spacing-gutter;
-  align-items: center;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+  gap: $spacing-xl;
+  align-items: stretch;
   padding: $spacing-xl 0;
   width: 100%;
-  min-height: 100vh;
+  min-height: calc(100vh - 64px);
   box-sizing: border-box;
 
   @media (max-width: 768px) {
@@ -36,20 +36,23 @@
 .hero-content {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   gap: $spacing-lg;
+  max-width: 560px;
 }
 
 .hero-badge {
   display: inline-flex;
   align-items: center;
   gap: $spacing-sm;
-  background-color: $secondary-fixed;
-  color: $on-secondary-fixed;
+  background-color: $surface-container;
+  color: $on-surface;
   padding: $spacing-sm $spacing-md;
   border-radius: 9999px;
   width: fit-content;
   font-size: $font-label-md;
   font-weight: $font-label-md-weight;
+  border: 1px solid $outline-variant;
 
   .material-symbols-outlined {
     font-size: 18px;
@@ -57,16 +60,25 @@
 }
 
 .hero-title {
-  font-size: 56px;
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-xs;
+  font-size: clamp(42px, 6vw, 64px);
   font-weight: 700;
-  line-height: 64px;
+  line-height: 1.03;
   letter-spacing: -0.02em;
   text-align: left;
   color: $on-surface;
+  margin: 0;
+
+  .hero-title-line {
+    display: block;
+  }
 
   .text-primary {
     color: $primary;
     font-style: italic;
+    display: block;
   }
 
   @media (max-width: 768px) {
@@ -77,16 +89,17 @@
 
 .hero-description {
   font-size: $font-body-lg;
-  line-height: $font-body-lg-line;
+  line-height: 1.75;
   color: $on-surface-variant;
-  max-width: 500px;
+  max-width: 56ch;
+  margin: 0;
 }
 
 .hero-actions {
   display: flex;
   flex-wrap: wrap;
-  gap: $spacing-md;
-  margin-top: $spacing-sm;
+  gap: $spacing-sm;
+  margin-top: $spacing-md;
 }
 
 // Bento Grid
@@ -94,6 +107,7 @@
   display: grid;
   grid-template-columns: 2fr 1fr;
   gap: $spacing-md;
+  grid-auto-rows: minmax(140px, auto);
 
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
@@ -104,10 +118,10 @@
   grid-row: span 2;
   overflow: hidden;
   border-radius: 24px;
-  padding: $spacing-lg;
+  padding: 0;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  align-items: stretch;
+  justify-content: stretch;
 
   img {
     width: 100%;
@@ -123,7 +137,7 @@
 
 .bento-card {
   border-radius: 24px;
-  padding: $spacing-lg;
+  padding: $spacing-md;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -184,6 +198,8 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: $spacing-gutter;
+  grid-auto-flow: row dense;
+  grid-auto-rows: minmax(220px, auto);
 
   @media (max-width: 1024px) {
     grid-template-columns: repeat(2, 1fr);
@@ -200,6 +216,7 @@
   display: flex;
   flex-direction: column;
   gap: $spacing-md;
+  min-height: 210px;
   transition: all 0.3s ease;
   cursor: pointer;
   background-color: $surface;
@@ -283,17 +300,22 @@
 // CTA Section
 .cta-section {
   padding: $spacing-xl;
-  background: linear-gradient(135deg, $primary 0%, $secondary 100%);
+  background:
+    linear-gradient(135deg, rgba($primary-fixed, 0.72) 0%, rgba($secondary-fixed, 0.68) 100%),
+    $surface-container-low;
   border-radius: 40px;
   text-align: center;
-  color: white;
+  color: $on-surface;
   margin: $spacing-xl 0;
+  border: 1px solid rgba($outline-variant, 0.9);
+  box-shadow: $shadow-soft-glow;
 
   h2 {
     font-size: $font-headline-lg;
     font-weight: 700;
     line-height: $font-headline-lg-line;
     margin-bottom: $spacing-md;
+    color: $on-surface;
   }
 
   p {
@@ -303,7 +325,8 @@
     max-width: 600px;
     margin-left: auto;
     margin-right: auto;
-    opacity: 0.95;
+    color: $on-surface-variant;
+    opacity: 1;
   }
 }
 
@@ -319,12 +342,15 @@
 .btn {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: $spacing-sm;
   padding: $spacing-md $spacing-lg;
   border: none;
   border-radius: 16px;
   font-size: $font-label-md;
   font-weight: $font-label-md-weight;
+  text-decoration: none;
+  min-height: 44px;
   cursor: pointer;
   transition: all 0.3s ease;
   font-family: inherit;
@@ -350,37 +376,153 @@
 
     &:hover {
       background-color: $surface-container-high;
+      border-color: $outline;
     }
   }
 
   &.btn-cta-primary {
-    background-color: $on-primary-fixed;
-    color: white;
+    background-color: $primary;
+    color: $on-primary;
+    border: 1px solid rgba($primary, 0.16);
     padding: $spacing-md $spacing-xl;
 
     &:hover {
       scale: 1.05;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 8px 24px rgba($primary, 0.28);
     }
   }
 
   &.btn-cta-secondary {
-    background-color: rgba(255, 255, 255, 0.4);
-    color: white;
+    background-color: rgba($surface-container-lowest, 0.75);
+    color: $on-surface;
     backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.5);
+    border: 1px solid rgba($outline-variant, 0.9);
     padding: $spacing-md $spacing-xl;
 
     &:hover {
-      background-color: rgba(255, 255, 255, 0.6);
+      background-color: $surface-container-lowest;
+      border-color: $outline;
     }
   }
 }
 
 .glass-card {
-  background: rgba(255, 255, 255, 0.7);
+  background: rgba($surface-container-lowest, 0.7);
   backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  border: 1px solid rgba($surface-container-lowest, 0.3);
+}
+
+.terminal-card {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
+  overflow: hidden;
+  min-height: 320px;
+  padding: 0;
+  color: $on-surface;
+  font-family: 'JetBrains Mono', 'Fira Code', ui-monospace, SFMono-Regular, Menlo, Monaco,
+    Consolas, 'Liberation Mono', 'Courier New', monospace;
+}
+
+.terminal-header {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.7rem 1rem;
+  border-bottom: 1px solid rgba($on-surface, 0.08);
+
+  .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+  }
+
+  .dot-red {
+    background: $error;
+  }
+
+  .dot-yellow {
+    background: $secondary;
+  }
+
+  .dot-green {
+    background: $tertiary;
+  }
+
+  .terminal-filename {
+    margin-left: 0.6rem;
+    font-size: 0.75rem;
+    opacity: 0.65;
+    letter-spacing: 0.03em;
+  }
+}
+
+.terminal-body {
+  flex: 1;
+  padding: 1.3rem 1.1rem;
+  display: flex;
+  align-items: flex-start;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: $on-surface-variant;
+
+  .prompt {
+    margin-right: 0.5rem;
+    opacity: 0.65;
+  }
+
+  .typed-text {
+    color: $on-surface;
+    word-break: break-word;
+  }
+
+  .cursor {
+    display: inline-block;
+    width: 2px;
+    height: 1.1em;
+    margin-left: 2px;
+    background: currentColor;
+    animation: blink 1s step-start infinite;
+  }
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .terminal-body .cursor {
+    animation: none;
+  }
+}
+
+@media (max-width: 1024px) {
+  .hero-section {
+    grid-template-columns: 1fr;
+    min-height: auto;
+    gap: $spacing-lg;
+  }
+
+  .hero-content {
+    max-width: 100%;
+  }
+
+  .terminal-card {
+    min-height: 260px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-actions {
+    width: 100%;
+
+    .btn {
+      width: 100%;
+    }
+  }
 }
 
 // Utility classes

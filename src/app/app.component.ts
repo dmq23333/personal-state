@@ -11,7 +11,7 @@ import { BreadcrumbComponent } from './core/breadcrumb/breadcrumb.component';
       <router-outlet />
     </main>
     <footer class="site-footer">
-      <span>&copy; {{ year }} Mengqi Deng</span>
+      <span>&copy; {{ year }} Mengqi  Amy Deng</span>
     </footer>
   `,
   styleUrl: './app.component.scss'

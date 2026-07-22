@@ -8,34 +8,45 @@
         <span>Hello, I'm Mengqi Deng</span>
       </div>
       <h1 class="hero-title">
-        Engineering Scalable <br/>
-        <span class="text-primary">Fullstack</span> Solutions
+        <span class="hero-title-line">Fullstack</span>
+        <span class="text-primary">Engineer</span>
       </h1>
       <p class="hero-description">
         I am a Java Fullstack Engineer specializing in building robust, performant web applications. From microservices architecture to fluid user interfaces, I blend technical precision with the soft aesthetics of modern design.
       </p>
       <div class="hero-actions">
-        <button class="btn btn-primary" (click)="resumeModalOpen.set(true)">
-          <span class="material-symbols-outlined">download</span>
-          Download Resume
-        </button>
-        <button class="btn btn-secondary">
-          View Github
-        </button>
+        <a class="btn btn-secondary" href="https://github.com/your-handle" target="_blank" rel="noopener">
+          <span class="material-symbols-outlined">code</span>
+          GitHub
+        </a>
+        <a class="btn btn-secondary" href="https://linkedin.com/in/your-handle" target="_blank" rel="noopener">
+          <span class="material-symbols-outlined">person</span>
+          LinkedIn
+        </a>
       </div>
     </div>
 
     <!-- Right: Bento Grid -->
     <div class="bento-grid">
-      <div class="bento-main glass-card">
-        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBRTwY-6-R5d9fYv3bSaGG-A_c5hU5iPzkPOxyGwPrhbE_QhD_DIcDGq1CJUWKjfn1fCan_-tX7XjDHE5e75B-2HkEsrh62Ec8AbiNo6GzrOgcmSKmjv8L2z5R5AiWphqDSQ71t4SP0zOhi302SewlfyTIvJ5AJICreEC75TGh1lYRPVUslEoHdl4FiXuqYhBpOdGqWw79KIPzvizljDltB1ekvHKbTlKp2Ts7UhDLOzSMEQwn7xki5" alt="Professional portrait"/>
+      <div class="bento-main glass-card terminal-card">
+        <div class="terminal-header">
+          <span class="dot dot-red"></span>
+          <span class="dot dot-yellow"></span>
+          <span class="dot dot-green"></span>
+          <span class="terminal-filename">whoami.sh</span>
+        </div>
+        <div class="terminal-body">
+          <span class="prompt">$</span>
+          <span class="typed-text">{{ typedText() }}</span>
+          <span class="cursor" aria-hidden="true"></span>
+        </div>
       </div>
       <div class="bento-card bento-stat bg-primary-fixed text-on-primary-fixed">
-        <div class="stat-value">5+</div>
+        <div class="stat-value">4+</div>
         <div class="stat-label">Years Experience</div>
       </div>
       <div class="bento-card bento-stat bg-secondary-fixed text-on-secondary-fixed">
-        <div class="stat-value">50+</div>
+        <div class="stat-value">20+</div>
         <div class="stat-label">Projects Delivered</div>
       </div>
     </div>
@@ -65,6 +76,49 @@
         </div>
       </div>
 
+      <!-- DevOps Card -->
+      <div class="expertise-card">
+        <span class="material-symbols-outlined icon-lg text-primary">cloud</span>
+        <h4>DevOps</h4>
+        <p>Docker, Kubernetes, and cloud deployment solutions.</p>
+      </div>
+
+      <!-- UI Design Card -->
+      <div class="expertise-card">
+        <span class="material-symbols-outlined icon-lg text-secondary">draft</span>
+        <h4>Design Tooling</h4>
+        <p>Figma for design handoff, Google Stitch for rapid AI-assisted prototyping.</p>
+      </div>
+
+      <!-- Testing Card -->
+      <div class="expertise-card">
+        <div class="card-flex">
+          <div class="card-icon bg-tertiary-fixed text-tertiary">
+            <span class="material-symbols-outlined">check_circle</span>
+          </div>
+          <div>
+            <h4>Quality First</h4>
+            <p>TDD implementation with JUnit, Mockito for backend reliability and end-to-end testing.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Machine Learning Card -->
+      <div class="expertise-card">
+        <div class="card-icon bg-tertiary-fixed text-tertiary">
+          <span class="material-symbols-outlined">psychology</span>
+        </div>
+        <div>
+          <h3>Machine Learning</h3>
+          <p>Graduate coursework and research in machine learning, now applied through Spring AI and RAG-based systems in production engineering.</p>
+        </div>
+        <div class="card-tags">
+          <span class="tag">Python</span>
+          <span class="tag">PyTorch</span>
+          <span class="tag">Spring AI</span>
+        </div>
+      </div>
+
       <!-- Frontend Dev Card -->
       <div class="expertise-card expertise-card-large">
         <div class="card-icon bg-secondary-fixed text-secondary">
@@ -80,47 +134,25 @@
           <span class="tag">Tailwind</span>
         </div>
       </div>
-
-      <!-- DevOps Card -->
-      <div class="expertise-card">
-        <span class="material-symbols-outlined icon-lg text-primary">cloud</span>
-        <h4>DevOps</h4>
-        <p>Docker, Kubernetes, and cloud deployment solutions.</p>
-      </div>
-
-      <!-- UI Design Card -->
-      <div class="expertise-card">
-        <span class="material-symbols-outlined icon-lg text-secondary">palette</span>
-        <h4>UI Design</h4>
-        <p>Figma-first workflow and Pastel Modernism design system.</p>
-      </div>
-
-      <!-- Testing Card -->
-      <div class="expertise-card expertise-card-large">
-        <div class="card-flex">
-          <div class="card-icon-lg bg-tertiary-fixed text-tertiary">
-            <span class="material-symbols-outlined">check_circle</span>
-          </div>
-          <div>
-            <h4>Quality First</h4>
-            <p>TDD implementation with JUnit, Mockito for backend reliability and end-to-end testing.</p>
-          </div>
-        </div>
-      </div>
     </div>
   </section>
 
   <!-- CTA Section -->
-  <section class="cta-section">
-    <h2>Ready to build something exceptional together?</h2>
-    <p>Let's connect and discuss how my expertise can help bring your next project to life.</p>
-    <div class="cta-actions">
-      <button class="btn btn-cta-primary">Schedule a Call</button>
-      <button class="btn btn-cta-secondary">Send an Email</button>
-    </div>
-  </section>
+<section class="cta-section">
+  <h2>Open to full-time opportunities</h2>
+  <p>
+    I'm currently looking for a role where I can grow into AI engineering while
+    building on my full-stack foundation. Let's talk about how I can contribute.
+  </p>
+  <div class="cta-actions">
+    <a class="btn btn-cta-primary" routerLink="/contact">
+      <span class="material-symbols-outlined">mail</span>
+      Get in Touch
+    </a>
+    <a class="btn btn-cta-secondary" href="https://linkedin.com/in/your-handle" target="_blank" rel="noopener">
+      <span class="material-symbols-outlined">work</span>
+      Connect on LinkedIn
+    </a>
+  </div>
+</section>
 </div>
-
-@if (resumeModalOpen()) {
-  <app-resume-request-dialog (onClose)="resumeModalOpen.set(false)" />
-}
