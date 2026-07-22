@@ -1,35 +1,99 @@
+@use '../../../styles/colors' as *;
+
 .contact {
-  max-width: 520px;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: $spacing-xl $spacing-margin;
+  color: $on-surface;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
   h1 {
-    margin-bottom: 0.25rem;
+    margin: 0;
+    font-size: $font-headline-lg;
+    line-height: $font-headline-lg-line;
+    font-weight: $font-headline-lg-weight;
+    color: $on-surface;
   }
-  p {
-    color: #555;
+
+  > p {
+    margin: $spacing-sm 0 $spacing-lg;
+    max-width: 66ch;
+    color: $on-surface-variant;
+    font-size: $font-body-lg;
+    line-height: $font-body-lg-line;
+  }
+
+  form {
+    width: min(760px, 100%);
+    max-width: 760px;
+    background-color: $surface-container-low;
+    border: 1px solid rgba($outline-variant, 0.6);
+    border-radius: 24px;
+    padding: $spacing-xl;
+    box-shadow: $shadow-soft-glow;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: $spacing-sm;
+  }
+
+  @media (max-width: 768px) {
+    padding: $spacing-lg $spacing-margin;
+
+    form {
+      border-radius: 20px;
+      padding: $spacing-lg;
+    }
   }
 }
 
 .field {
-  margin-bottom: 1.1rem;
+  width: 100%;
+  margin-bottom: $spacing-md;
   display: flex;
   flex-direction: column;
 
   label {
-    font-size: 0.85rem;
-    margin-bottom: 0.35rem;
-    color: #333;
+    font-size: $font-label-md;
+    font-weight: $font-label-md-weight;
+    margin-bottom: $spacing-xs;
+    color: $on-surface;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    text-align: center;
   }
+
   input,
   textarea {
-    padding: 0.6rem 0.7rem;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+    padding: 0.8rem 0.9rem;
+    border: 1px solid $outline-variant;
+    background-color: $surface-container-lowest;
+    border-radius: 12px;
+    color: $on-surface;
+    text-align: center;
     font: inherit;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+
+    &:focus {
+      outline: none;
+      border-color: rgba($primary, 0.7);
+      box-shadow: 0 0 0 3px rgba($primary-fixed-dim, 0.35);
+    }
   }
+
+  textarea {
+    resize: vertical;
+    min-height: 140px;
+  }
+
   .error {
-    color: #c0392b;
-    font-size: 0.8rem;
-    margin-top: 0.25rem;
+    color: $error;
+    font-size: $font-label-md;
+    margin-top: $spacing-xs;
+    text-align: center;
   }
 }
 
@@ -42,25 +106,53 @@
 }
 
 button {
-  padding: 0.65rem 1.5rem;
-  background: #111;
-  color: #fff;
-  border: none;
-  border-radius: 4px;
+  align-self: center;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: $spacing-md $spacing-xl;
+  background-color: $primary;
+  color: $on-primary;
+  border: 1px solid rgba($primary, 0.16);
+  border-radius: 16px;
+  font-size: $font-label-md;
+  font-weight: $font-label-md-weight;
+  font-family: inherit;
   cursor: pointer;
-}
-button:disabled {
-  opacity: 0.6;
-  cursor: not-allowed;
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba($primary, 0.28);
+  }
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+  }
 }
 
 .status {
-  margin-top: 1rem;
-  font-size: 0.9rem;
+  width: 100%;
+  margin-top: $spacing-sm;
+  padding: $spacing-sm $spacing-md;
+  border-radius: 12px;
+  font-size: $font-body-md;
+  line-height: $font-body-md-line;
+  text-align: center;
 }
+
 .status.success {
-  color: #1e7e34;
+  color: $on-tertiary-fixed;
+  background-color: rgba($tertiary-fixed, 0.6);
+  border: 1px solid rgba($tertiary, 0.28);
 }
+
 .status.error {
-  color: #c0392b;
+  color: $on-error-container;
+  background-color: rgba($error-container, 0.9);
+  border: 1px solid rgba($error, 0.28);
 }

@@ -29,7 +29,7 @@
       <label for="message">Message</label>
       <textarea id="message" rows="5" formControlName="message"></textarea>
       @if (f.message.invalid && f.message.touched) {
-        <span class="error">Message must be at least 10 characters</span>
+        <span class="error">Message must be at most 2000 characters</span>
       }
     </div>
 

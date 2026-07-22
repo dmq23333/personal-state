@@ -1,6 +1,6 @@
 # personal-site
 
-A minimal Angular personal portfolio site: homepage + project detail pages + email contact form (powered by EmailJS, no backend required).
+A minimal Angular personal portfolio site: homepage + project detail pages + email contact form.
 
 ## Commands
 
@@ -28,3 +28,39 @@ src/app/
   shared/models/project.model.ts
 src/assets/data/projects.json   Project data source
 ```
+
+## Contact Mail (Kubernetes Secret, not in Git)
+
+Contact form now calls `POST /api/contact` instead of sending mail directly from browser.
+
+### 1) Backend mail API
+
+Backend service is in `mail-api/`:
+
+```bash
+cd mail-api
+npm install
+npm start   # runs on :8080
+```
+
+### 2) Kubernetes Secret (local file only)
+
+Copy template and fill real values:
+
+```bash
+cp k8s/contact-mail-secret.example.yaml k8s/contact-mail-secret.yaml
+```
+
+`k8s/contact-mail-secret.yaml` is in `.gitignore`, so it will not be pushed to GitHub.
+
+Apply manifests:
+
+```bash
+kubectl apply -f k8s/contact-mail-secret.yaml
+kubectl apply -f k8s/contact-mail-api.deployment.yaml
+```
+
+### 3) Frontend API URL
+
+Frontend uses `environment.contactApiUrl` (default: `/api/contact`).
+Configure your ingress/reverse-proxy so `/api/contact` routes to `contact-mail-api` service.

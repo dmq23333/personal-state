@@ -1,28 +1,139 @@
 [
   {
-    "slug": "payment-ds",
-    "title": "Payment Platform payment-ds",
-    "summary": "A Java full-stack payment system, covering the design and delivery of both the frontend console and the backend transaction API.",
-    "stack": ["Java", "Spring Boot", "Angular", "Kubernetes", "Jenkins"],
-    "highlights": [
-      "Designed and implemented the core interaction flow between the payment-ds-console frontend and the payment-ds-api backend",
-      "Contributed to CI/CD pipeline setup, automating deployment with Jenkins + Kubernetes",
-      "Led containerization efforts, unifying deployment configuration across dev/test/prod environments"
+    "slug": "anp-payment-risk-platform",
+    "title": "Payment and Risk Control Platform",
+    "summary": "Backend-focused full-stack work on a multi-tenant payment and risk-control platform combining workflow orchestration with configurable limit management for secure transaction decisioning.",
+    "stack": [
+      "Java",
+      "Spring Boot",
+      "MySQL",
+      "Redis",
+      "Redis Streams",
+      "DDD",
+      "Hexagonal Architecture"
     ],
-    "role": "Java Full-Stack Engineer",
-    "period": "2022 - Present"
+    "highlights": [
+      "Designed and delivered core backend modules for payment service, admin service, and shared services in Java 17-25 with Spring Boot",
+      "Built tenant-level limit management with multi-dimensional rules, including amount thresholds, operating windows, and channel constraints",
+      "Implemented tenant-aware RBAC and data isolation across functional and data-level access boundaries",
+      "Developed event-driven flows with the Outbox pattern and Redis Streams to improve asynchronous reliability",
+      "Designed lease-based distributed scheduling to reduce duplicate workflow execution across nodes",
+      "Optimized MySQL and Redis interactions for higher stability under concurrent workloads",
+      "Maintained schema evolution, API documentation, and H2 integration tests to improve team onboarding speed"
+    ],
+    "role": "Java Engineer, ANP Technology Pty Ltd",
+    "period": "Mar 2024 - Present"
   },
   {
-    "slug": "resume-rag-assistant",
-    "title": "Resume RAG Assistant (In Progress)",
-    "summary": "A retrieval-augmented Q&A assistant built with Spring AI + pgvector, letting recruiters ask it directly about my project experience.",
-    "stack": ["Spring AI", "pgvector", "Ollama", "Spring Boot"],
-    "highlights": [
-      "Vectorized my resume and project docs to build a searchable knowledge base",
-      "Structured information extraction using llama3.2:3b, with temperature 0.1 for stable output",
-      "My first hands-on project in transitioning to AI Engineer"
+    "slug": "event-driven-payment-platform",
+    "title": "Event-Driven Payment Platform",
+    "summary": "An event-driven microservices platform for order and payment processing with consistency guarantees, resilient messaging, and secure API access.",
+    "stack": [
+      "Java",
+      "Spring Boot",
+      "Kafka",
+      "Redis",
+      "MySQL",
+      "Docker",
+      "OAuth2"
     ],
-    "role": "Personal Project",
+    "highlights": [
+      "Designed and implemented microservices for order and payment orchestration",
+      "Applied the Outbox pattern to ensure consistency between database transactions and event publishing",
+      "Built idempotent consumers to safely handle duplicate message delivery",
+      "Implemented retry strategy and dead letter queue handling for failure scenarios",
+      "Integrated OAuth2 for secure API access and service-to-service trust",
+      "Containerized services with Docker Compose for consistent local and deployment environments"
+    ],
+    "role": "Independent Full-Stack Developer",
+    "period": "Jan 2023 - Mar 2024"
+  },
+  {
+    "slug": "flash-sale-system",
+    "title": "Flash Sale System",
+    "summary": "A high-concurrency transaction system built to absorb traffic spikes, protect inventory consistency, and sustain throughput under extreme load.",
+    "stack": [
+      "Spring Boot",
+      "Redis",
+      "Lua",
+      "Kafka",
+      "MySQL"
+    ],
+    "highlights": [
+      "Designed high-concurrency request flow for peak-time flash sale traffic",
+      "Prevented overselling through Redis plus Lua atomic inventory deduction",
+      "Decoupled ingress traffic from order processing through Kafka buffering",
+      "Implemented token-bucket rate limiting for abusive traffic control",
+      "Improved throughput and resilience under load tests and burst scenarios"
+    ],
+    "role": "Independent Full-Stack Developer",
+    "period": "2023 - 2024"
+  },
+  {
+    "slug": "workflow-engine-platform",
+    "title": "Workflow Engine Platform",
+    "summary": "A BPMN-driven workflow platform supporting multi-step approval processes, asynchronous jobs, and timer-based orchestration for business operations.",
+    "stack": [
+      "Spring Boot",
+      "Camunda",
+      "MySQL",
+      "Angular",
+      "REST API"
+    ],
+    "highlights": [
+      "Developed BPMN-based workflow execution for business process orchestration",
+      "Designed multi-step approval flows such as expense approval systems",
+      "Built RESTful APIs for process definition, task handling, and workflow operations",
+      "Implemented asynchronous jobs and timer events for delayed or scheduled actions"
+    ],
+    "role": "Independent Full-Stack Developer",
+    "period": "2023 - 2024"
+  },
+  {
+    "slug": "supplier-platform-online-gaming",
+    "title": "Integrated Supplier Platform for Online Gaming",
+    "summary": "Full-stack contributions to a high-traffic supplier aggregation platform that exposed unified APIs, supported multi-account operations, and improved platform observability.",
+    "stack": [
+      "Spring Boot",
+      "PostgreSQL",
+      "Vue.js",
+      "CI/CD",
+      "Monitoring"
+    ],
+    "highlights": [
+      "Implemented scalable backend services and frontend interfaces for supplier integration workflows",
+      "Built a dynamic log and alert system to aggregate supplier requests and proactively notify downstream clients on failures",
+      "Participated in CI/CD, server deployment, and metrics monitoring to improve reliability",
+      "Collaborated in design reviews and cross-team delivery to optimize feature quality and incident resolution"
+    ],
+    "role": "Java Engineer, Articulate Pty Ltd",
+    "period": "Oct 2021 - Jan 2023"
+  },
+  {
+    "slug": "job-mail-scan",
+    "title": "Job Mail Scan and Application Tracker",
+    "summary": "A Spring Boot backend that converts Gmail inbox activity into an automatic job application tracker, with status classification, thread-level deduplication, and searchable APIs.",
+    "stack": [
+      "Java 25",
+      "Spring Boot 4",
+      "Spring Security OAuth2",
+      "Gmail API",
+      "Spring Data JPA",
+      "MySQL",
+      "H2",
+      "Docker",
+      "GCP Secret Manager"
+    ],
+    "highlights": [
+      "Integrated OAuth2 and Gmail API to fetch paginated messages and parse MIME content",
+      "Implemented a rule-based classification engine mapping emails to application status with prioritized keyword matching",
+      "Built thread-based deduplication and priority status merge logic to avoid regression updates",
+      "Designed REST APIs for CRUD and multi-field filtering using JPA Specifications",
+      "Added production-grade secret loading via GCP Secret Manager with environment fallback",
+      "Delivered 700+ lines of tests across classifier, parser, and controller layers",
+      "Containerized with multi-stage Docker builds and Docker Compose"
+    ],
+    "role": "Independent Backend Project",
     "period": "2026"
   }
 ]

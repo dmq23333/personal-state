@@ -1,5 +1,6 @@
 export const environment = {
   production: false,
+  contactApiUrl: '/api/contact',
   emailjs: {
     // Sign up for free at https://www.emailjs.com, then grab these from Email Services / Email Templates / Account
     serviceId: 'YOUR_EMAILJS_SERVICE_ID',

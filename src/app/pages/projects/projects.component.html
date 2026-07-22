@@ -14,7 +14,7 @@
   <section class="projects-grid-section">
     <div class="projects-bento">
       @for (project of projects(); let idx = $index; track project.slug) {
-        @if (idx === 0) {
+        @if (isWideCard(project)) {
           <!-- First project: Large featured card -->
           <div class="bento-card bento-large project-card">
             <div class="card-content">
@@ -29,6 +29,7 @@
                 </div>
                 <h3>{{ project.title }}</h3>
                 <p>{{ project.summary }}</p>
+                <!--
                 <div class="card-footer">
                   <a [routerLink]="['/projects', project.slug]" class="link-primary">
                     View Project <span class="material-symbols-outlined">arrow_forward</span>
@@ -38,6 +39,7 @@
                     <span class="material-symbols-outlined">code</span>
                   </a>
                 </div>
+                -->
               </div>
             </div>
           </div>
@@ -55,11 +57,13 @@
               </div>
               <h3>{{ project.title }}</h3>
               <p>{{ project.summary }}</p>
+              <!--
               <div class="card-footer">
                 <a [routerLink]="['/projects', project.slug]" class="link-primary">
                   Details <span class="material-symbols-outlined">open_in_new</span>
                 </a>
               </div>
+              -->
             </div>
           </div>
         }

@@ -3,3 +3,4 @@ dist/
 .angular/
 *.log
 src/assets/resume.pdf
+k8s/contact-mail-secret.yaml

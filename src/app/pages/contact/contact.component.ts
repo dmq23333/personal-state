@@ -1,16 +1,17 @@
 import { Component, signal } from '@angular/core';
 
+import { HttpClient } from '@angular/common/http';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
-import emailjs from '@emailjs/browser';
+import { firstValueFrom } from 'rxjs';
 import { environment } from '../../../environments/environment';
 
 type SubmitState = 'idle' | 'sending' | 'success' | 'error';
 
 @Component({
-    selector: 'app-contact',
-    imports: [ReactiveFormsModule],
-    templateUrl: './contact.component.html',
-    styleUrl: './contact.component.scss'
+  selector: 'app-contact',
+  imports: [ReactiveFormsModule],
+  templateUrl: './contact.component.html',
+  styleUrl: './contact.component.scss'
 })
 export class ContactComponent {
   state = signal<SubmitState>('idle');
@@ -19,10 +20,13 @@ export class ContactComponent {
     name: ['', [Validators.required, Validators.maxLength(60)]],
     email: ['', [Validators.required, Validators.email]],
     company: [''], // Honeypot field: real users never fill it, bots usually do — simple anti-spam
-    message: ['', [Validators.required, Validators.minLength(10), Validators.maxLength(2000)]]
+    message: ['', [Validators.maxLength(2000)]]
   });
 
-  constructor(private fb: FormBuilder) {}
+  constructor(
+    private fb: FormBuilder,
+    private http: HttpClient
+  ) { }
 
   get f() {
     return this.form.controls;
@@ -44,20 +48,17 @@ export class ContactComponent {
     this.state.set('sending');
 
     try {
-      await emailjs.send(
-        environment.emailjs.serviceId,
-        environment.emailjs.templateId,
-        {
-          from_name: this.form.value.name,
-          from_email: this.form.value.email,
+      await firstValueFrom(
+        this.http.post(environment.contactApiUrl, {
+          name: this.form.value.name,
+          email: this.form.value.email,
           message: this.form.value.message
-        },
-        { publicKey: environment.emailjs.publicKey }
+        })
       );
       this.state.set('success');
       this.form.reset();
     } catch (err) {
-      console.error('EmailJS send failed', err);
+      console.error('Contact mail send failed', err);
       this.state.set('error');
     }
   }
