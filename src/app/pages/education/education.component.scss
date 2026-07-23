@@ -84,35 +84,35 @@
 
       .degree-item {
         .degree-title {
-          font-size: $font-body-lg;
+          font-size: $font-headline-md;
           font-weight: 700;
           color: $on-surface;
           margin-bottom: $spacing-xs;
         }
 
         .institution {
-          font-size: $font-body-md;
+          font-size: $font-body-lg;
           color: $primary;
           margin-bottom: $spacing-xs;
         }
 
         .year {
-          font-size: $font-label-md;
+          font-size: $font-body-md;
           color: $outline;
           margin-bottom: $spacing-sm;
         }
 
         .specialization {
-          font-size: $font-body-md;
+          font-size: $font-body-lg;
           font-style: italic;
           color: $secondary;
           margin-bottom: $spacing-sm;
         }
 
         .description {
-          font-size: $font-body-md;
+          font-size: $font-body-lg;
           color: $on-surface-variant;
-          line-height: $font-body-md-line;
+          line-height: $font-body-lg-line;
         }
       }
     }
@@ -148,15 +148,15 @@
 
       .skills-grid {
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr;
         gap: $spacing-sm;
 
         .skill-tag {
           background-color: $secondary-fixed;
           color: $on-secondary-fixed;
-          padding: $spacing-sm $spacing-md;
+          padding: $spacing-md $spacing-lg;
           border-radius: $radius-full;
-          font-size: $font-label-md;
+          font-size: $font-body-md;
           font-weight: $font-label-md-weight;
           text-align: center;
           transition: all 0.3s ease;

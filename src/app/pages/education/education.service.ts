@@ -61,7 +61,9 @@ export class EducationService {
       'JSP Web Programming',
       'Python Programming',
       'Software Engineering Principles',
-      'Operating Systems'
+      'Operating Systems',
+      'Computer Networks',
+      'Data Structures & Algorithms'
     ];
   }
 }
