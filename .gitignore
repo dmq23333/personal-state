@@ -4,3 +4,10 @@ dist/
 *.log
 src/assets/resume.pdf
 k8s/contact-mail-secret.yaml
+
+# wrangler files
+.wrangler
+.dev.vars*
+!.dev.vars.example
+.env*
+!.env.example
