@@ -29,11 +29,14 @@ export const routes: Routes = [
     data: { breadcrumb: 'Contact' }
   },
   {
-    path: 'about',
+    path: 'work-experience',
     loadComponent: () =>
-      import('./pages/about/about.component').then((m) => m.AboutComponent),
-    data: { breadcrumb: 'About' }
+      import('./pages/work-experience/work-experience.component').then(
+        (m) => m.WorkExperienceComponent
+      ),
+    data: { breadcrumb: 'Work Experience' }
   },
+  { path: 'about', redirectTo: 'work-experience' },
   {
     path: 'education',
     loadComponent: () =>

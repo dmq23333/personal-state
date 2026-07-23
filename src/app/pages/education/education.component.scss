@@ -4,6 +4,13 @@
   background-color: $background;
   color: $on-surface;
   font-family: $font-family-base;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 $spacing-margin;
+
+  @media (max-width: 768px) {
+    padding: 0 $spacing-margin;
+  }
 }
 
 .education-hero {
@@ -35,7 +42,7 @@
 
 .education-main {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 3fr 2fr;
   gap: $spacing-gutter;
   margin: $spacing-xl 0;
 
@@ -117,6 +124,7 @@
     gap: $spacing-lg;
 
     .skills-card {
+      flex: 1;
       background-color: $surface-container-low;
       border-radius: $radius-lg;
       padding: $spacing-lg;
@@ -239,14 +247,15 @@
   }
 
   .coursework-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    display: flex;
+    flex-wrap: wrap;
     gap: $spacing-md;
 
     .course-card {
+      flex: 0 1 auto;
       background: linear-gradient(135deg, $primary-fixed 0%, $secondary-fixed 100%);
       color: $on-primary-fixed;
-      padding: $spacing-lg;
+      padding: $spacing-md $spacing-lg;
       border-radius: $radius-lg;
       text-align: center;
       transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);

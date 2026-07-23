@@ -38,7 +38,7 @@
       <div class="skills-card">
         <div class="card-header">
           <span class="material-symbols-outlined material-icon">star</span>
-          <h3>Key Skills</h3>
+          <h3>Competencies</h3>
         </div>
         <div class="skills-grid">
           @for (skill of keySkills; track skill) {
@@ -48,21 +48,23 @@
       </div>
 
       <!-- Certifications Card -->
-      <div class="certifications-card">
-        <div class="card-header">
-          <span class="material-symbols-outlined material-icon">verified</span>
-          <h3>Certifications</h3>
+      @if (certifications.length) {
+        <div class="certifications-card">
+          <div class="card-header">
+            <span class="material-symbols-outlined material-icon">verified</span>
+            <h3>Certifications</h3>
+          </div>
+          <div class="certification-items">
+            @for (cert of certifications; track cert.issuer) {
+              <div class="cert-item">
+                <div class="cert-title">{{ cert.title }}</div>
+                <div class="cert-issuer">{{ cert.issuer }}</div>
+                <div class="cert-year">{{ cert.year }}</div>
+              </div>
+            }
+          </div>
         </div>
-        <div class="certification-items">
-          @for (cert of certifications; track cert.issuer) {
-            <div class="cert-item">
-              <div class="cert-title">{{ cert.title }}</div>
-              <div class="cert-issuer">{{ cert.issuer }}</div>
-              <div class="cert-year">{{ cert.year }}</div>
-            </div>
-          }
-        </div>
-      </div>
+      }
     </div>
   </section>
 
@@ -86,29 +88,33 @@
       <div class="highlight-item">
         <div class="highlight-icon">🎯</div>
         <div class="highlight-content">
-          <div class="highlight-title">Specialized Expertise</div>
-          <div class="highlight-description">Deep knowledge in human-computer interaction, cognitive ergonomics, and immersive interface design.</div>
+          <div class="highlight-title">Cross-Disciplinary Foundation</div>
+          <div class="highlight-description">Academic training spanning web frontend programming, database systems, and machine learning, alongside a software engineering foundation in C++, Java, and JSP web development.</div>
         </div>
       </div>
       <div class="highlight-item">
         <div class="highlight-icon">🏆</div>
         <div class="highlight-content">
-          <div class="highlight-title">Distinguished Achievement</div>
-          <div class="highlight-description">Graduated with Distinguished Honors and actively participated in AI Research Lab at MIT.</div>
+          <div class="highlight-title">Consistent IT Focus</div>
+          <div class="highlight-description">
+            M.IT — University of New South Wales (Sydney)<br />
+            B.Eng, Software Engineering — East China Jiaotong University<br />
+            Consistent focus in software/IT, most recently deepening into AI engineering.
+          </div>
         </div>
       </div>
       <div class="highlight-item">
         <div class="highlight-icon">🚀</div>
         <div class="highlight-content">
           <div class="highlight-title">Continuous Learning</div>
-          <div class="highlight-description">Pursuing professional certifications in product management and latest technologies to stay ahead of the curve.</div>
+          <div class="highlight-description">Built on academic coursework with hands-on experience in backend systems, event-driven architecture, and full-stack development.</div>
         </div>
       </div>
       <div class="highlight-item">
         <div class="highlight-icon">💡</div>
         <div class="highlight-content">
           <div class="highlight-title">Full-Stack Mastery</div>
-          <div class="highlight-description">Comprehensive skills spanning algorithmic efficiency, full-stack development, system architecture, and machine learning.</div>
+          <div class="highlight-description">Comprehensive skills spanning Java backend engineering, modern frontend frameworks, and database design.</div>
         </div>
       </div>
     </div>

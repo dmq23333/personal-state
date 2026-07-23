@@ -1,0 +1,311 @@
+@use '../../../styles/colors' as *;
+
+.work-experience-container {
+  background-color: $background;
+  color: $on-surface;
+  padding: 64px 24px 96px;
+}
+
+/* ---------- Hero ---------- */
+
+.work-hero {
+  max-width: 720px;
+  margin: 0 auto 72px;
+  text-align: center;
+}
+
+.work-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  border: 1px solid $outline-variant;
+  border-radius: 999px;
+  background: $surface-container;
+  color: $primary;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.work-badge .material-symbols-outlined {
+  font-size: 16px;
+}
+
+.work-hero h1 {
+  font-weight: 700;
+  font-size: clamp(28px, 4vw, 40px);
+  line-height: 1.2;
+  margin: 0 0 14px;
+  color: $on-surface;
+}
+
+.work-hero > p {
+  color: $on-surface-variant;
+  font-size: 16px;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ---------- Timeline shell ---------- */
+
+.experience-timeline {
+  position: relative;
+  max-width: 840px;
+  margin: 0 auto;
+}
+
+.timeline-spine {
+  position: absolute;
+  top: 6px;
+  bottom: 6px;
+  left: 19px;
+  width: 2px;
+  background: linear-gradient(
+    to bottom,
+    $primary 0%,
+    $outline-variant 12%,
+    $outline-variant 100%
+  );
+}
+
+.timeline-row {
+  position: relative;
+  display: flex;
+  gap: 28px;
+  padding-bottom: 40px;
+}
+
+.timeline-row:last-child {
+  padding-bottom: 0;
+}
+
+/* ---------- Node ---------- */
+
+.timeline-node {
+  position: relative;
+  flex: 0 0 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+.node-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: $outline;
+  border: 2px solid $background;
+  box-shadow: 0 0 0 2px $outline-variant;
+}
+
+.timeline-row.is-current .node-dot {
+  background: $tertiary;
+  box-shadow: 0 0 0 2px $tertiary, 0 0 14px 2px rgba($tertiary, 0.35);
+}
+
+.node-ping {
+  display: none;
+}
+
+.timeline-row.is-current .node-ping {
+  display: block;
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: $tertiary;
+  opacity: 0.6;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .timeline-row.is-current .node-ping {
+    animation: ping 2.2s cubic-bezier(0, 0, 0.2, 1) infinite;
+  }
+}
+
+@keyframes ping {
+  0% {
+    transform: scale(1);
+    opacity: 0.55;
+  }
+  75%, 100% {
+    transform: scale(2.6);
+    opacity: 0;
+  }
+}
+
+/* ---------- Card ---------- */
+
+.experience-card {
+  flex: 1;
+  min-width: 0;
+  background: $surface-container-low;
+  border: 1px solid rgba($outline-variant, 0.6);
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: $shadow-soft-glow;
+  transition: border-color 0.2s ease;
+}
+
+.timeline-row.is-current .experience-card {
+  border-color: rgba($tertiary, 0.35);
+}
+
+/* ---------- Highlight block (leads the card) ---------- */
+
+.highlight-block {
+  background: $surface-container;
+  border: 1px solid $outline-variant;
+  border-radius: 8px;
+  padding: 14px 16px 16px;
+  margin-bottom: 20px;
+}
+
+.highlight-block-head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+  padding-bottom: 10px;
+  border-bottom: 1px dashed $outline-variant;
+}
+
+.highlight-block-head .material-symbols-outlined {
+  font-size: 15px;
+  color: $primary;
+}
+
+.highlight-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  color: $on-surface-variant;
+  letter-spacing: 0.02em;
+}
+
+.highlight-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.highlight-list li {
+  display: flex;
+  gap: 10px;
+  font-size: 14px;
+  line-height: 1.55;
+  color: $on-surface;
+}
+
+.prompt-glyph {
+  flex: 0 0 auto;
+  font-family: 'JetBrains Mono', monospace;
+  color: $primary;
+  font-weight: 600;
+}
+
+/* ---------- Meta / role / company ---------- */
+
+.meta-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.meta-row h2 {
+  font-weight: 600;
+  font-size: 19px;
+  margin: 0 0 4px;
+  color: $on-surface;
+}
+
+.company {
+  margin: 0;
+  color: $primary;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.meta-right {
+  text-align: right;
+}
+
+.period {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  color: $on-surface-variant;
+  margin: 0 0 4px;
+}
+
+.location {
+  margin: 0;
+  font-size: 12px;
+  color: $outline;
+}
+
+/* ---------- Summary ---------- */
+
+.summary {
+  margin: 16px 0 0;
+  color: $on-surface-variant;
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+/* ---------- Stack tags ---------- */
+
+.stack-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 18px;
+}
+
+.tag {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  color: $on-primary-fixed-variant;
+  background: rgba($primary-container, 0.2);
+  border: 1px solid rgba($outline-variant, 0.4);
+  border-radius: 5px;
+  padding: 4px 9px;
+  letter-spacing: 0.02em;
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 640px) {
+  .work-experience-container {
+    padding: 48px 16px 72px;
+  }
+
+  .timeline-spine {
+    left: 15px;
+  }
+
+  .timeline-row {
+    gap: 18px;
+    padding-bottom: 32px;
+  }
+
+  .timeline-node {
+    flex-basis: 32px;
+  }
+
+  .experience-card {
+    padding: 18px;
+  }
+
+  .meta-right {
+    text-align: left;
+  }
+}

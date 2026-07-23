@@ -1,6 +1,5 @@
 import { Component, OnInit, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterLink } from '@angular/router';
 import { ProjectService } from '../../core/services/project.service';
 import { Project } from '../../shared/models/project.model';
 import { CareerCtaComponent } from '../../shared/components/career-cta/career-cta.component';
@@ -8,7 +7,7 @@ import { CareerCtaComponent } from '../../shared/components/career-cta/career-ct
 @Component({
   selector: 'app-projects',
   standalone: true,
-  imports: [CommonModule, RouterLink, CareerCtaComponent],
+  imports: [CommonModule, CareerCtaComponent],
   templateUrl: './projects.component.html',
   styleUrl: './projects.component.scss'
 })
@@ -41,6 +40,7 @@ export class ProjectsComponent implements OnInit {
     for (let i = 0; i < list.length; i += 2) {
       const first = list[i];
       const second = list[i + 1];
+      const rowIndex = Math.floor(i / 2);
 
       if (!second) {
         // Fallback for odd counts: keep the last single card wide.
@@ -48,8 +48,11 @@ export class ProjectsComponent implements OnInit {
         continue;
       }
 
-      const rowSeed = `${first.slug}|${second.slug}|${Math.floor(i / 2)}`;
-      const firstIsWide = this.hashToNumber(rowSeed) % 2 === 0;
+      // Keep pseudo-random widths by row, but enforce row 3 as [small, large].
+      const firstIsWide =
+        rowIndex === 2
+          ? false
+          : this.hashToNumber(`${first.slug}|${second.slug}|${rowIndex}`) % 2 === 0;
       wideSlugs.add(firstIsWide ? first.slug : second.slug);
     }
 

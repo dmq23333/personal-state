@@ -1,0 +1,65 @@
+<div class="work-experience-container">
+  <section class="work-hero">
+    <div class="work-badge">
+      <span class="material-symbols-outlined">work_history</span>
+      <span>Work Experience</span>
+    </div>
+    <h1>Production-Focused Engineering Experience</h1>
+    <p>
+      A focused summary of my professional delivery across payment platforms,
+      event-driven architecture, and distributed backend systems.
+    </p>
+  </section>
+
+  <section class="experience-timeline">
+    <div class="timeline-spine" aria-hidden="true"></div>
+
+    @for (job of workExperience; track job.company + job.period; let isFirst = $first; let idx = $index) {
+      <article class="timeline-row" [class.is-current]="isFirst">
+        <div class="timeline-node" aria-hidden="true">
+          <span class="node-dot"></span>
+          <span class="node-ping"></span>
+        </div>
+
+        <div class="experience-card">
+          <!-- highlights lead the card, terminal-log style -->
+          <div class="highlight-block">
+            <div class="highlight-block-head">
+              <span class="material-symbols-outlined">terminal</span>
+              <span class="highlight-label">key_results.log</span>
+            </div>
+            <ul class="highlight-list">
+              @for (item of job.highlights; track item) {
+                <li>
+                  <span class="prompt-glyph">&gt;</span>
+                  <span>{{ item }}</span>
+                </li>
+              }
+            </ul>
+          </div>
+
+          <div class="meta-row">
+            <div>
+              <h2>{{ job.role }}</h2>
+              <p class="company">{{ job.company }}</p>
+            </div>
+            <div class="meta-right">
+              <p class="period">{{ job.period }}</p>
+              <p class="location">{{ job.location }}</p>
+            </div>
+          </div>
+
+          <p class="summary">{{ job.summary }}</p>
+
+          <div class="stack-tags">
+            @for (tech of job.stack; track tech) {
+              <span class="tag">{{ tech }}</span>
+            }
+          </div>
+        </div>
+      </article>
+    }
+  </section>
+
+  <app-career-cta></app-career-cta>
+</div>
