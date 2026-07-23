@@ -25,21 +25,11 @@ export class HomeComponent implements OnInit, OnDestroy {
   private charIndex = 0;
   private deleting = false;
   private timer?: ReturnType<typeof setTimeout>;
-  private reducedMotion = false;
 
   constructor(private projectService: ProjectService) { }
 
   ngOnInit(): void {
     this.projectService.getAll().subscribe((list) => this.projects.set(list));
-
-    this.reducedMotion =
-      typeof window !== 'undefined' &&
-      window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-    if (this.reducedMotion) {
-      this.typedText.set(this.phrases[0]);
-      return;
-    }
     this.tick();
   }
 
