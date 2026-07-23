@@ -13,7 +13,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 1280px;
+  max-width: $content-max-width;
   margin: 0 auto;
   padding: $spacing-md $spacing-margin;
   gap: $spacing-lg;
@@ -76,7 +76,7 @@
   padding: $spacing-sm $spacing-lg;
   background-color: $primary;
   color: $on-primary;
-  border-radius: 9999px;
+  border-radius: $radius-full;
   font-size: $font-label-md;
   font-weight: $font-label-md-weight;
   text-decoration: none;

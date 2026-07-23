@@ -20,11 +20,11 @@
   gap: 8px;
   padding: 6px 14px;
   border: 1px solid $outline-variant;
-  border-radius: 999px;
+  border-radius: $radius-full;
   background: $surface-container;
   color: $primary;
   font-family: 'JetBrains Mono', monospace;
-  font-size: 12px;
+  font-size: $font-label-md;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   margin-bottom: 20px;
@@ -44,7 +44,7 @@
 
 .work-hero > p {
   color: $on-surface-variant;
-  font-size: 16px;
+  font-size: $font-body-lg;
   line-height: 1.6;
   margin: 0;
 }
@@ -146,7 +146,7 @@
   min-width: 0;
   background: $surface-container-low;
   border: 1px solid rgba($outline-variant, 0.6);
-  border-radius: 12px;
+  border-radius: $radius-md;
   padding: 24px;
   box-shadow: $shadow-soft-glow;
   transition: border-color 0.2s ease;
@@ -161,7 +161,7 @@
 .highlight-block {
   background: $surface-container;
   border: 1px solid $outline-variant;
-  border-radius: 8px;
+  border-radius: $radius-default;
   padding: 14px 16px 16px;
   margin-bottom: 20px;
 }
@@ -182,7 +182,7 @@
 
 .highlight-label {
   font-family: 'JetBrains Mono', monospace;
-  font-size: 12px;
+  font-size: $font-label-md;
   color: $on-surface-variant;
   letter-spacing: 0.02em;
 }
@@ -199,7 +199,7 @@
 .highlight-list li {
   display: flex;
   gap: 10px;
-  font-size: 14px;
+  font-size: $font-body-md;
   line-height: 1.55;
   color: $on-surface;
 }
@@ -231,7 +231,7 @@
 .company {
   margin: 0;
   color: $primary;
-  font-size: 14px;
+  font-size: $font-body-md;
   font-weight: 500;
 }
 
@@ -241,14 +241,14 @@
 
 .period {
   font-family: 'JetBrains Mono', monospace;
-  font-size: 12px;
+  font-size: $font-label-md;
   color: $on-surface-variant;
   margin: 0 0 4px;
 }
 
 .location {
   margin: 0;
-  font-size: 12px;
+  font-size: $font-label-md;
   color: $outline;
 }
 
@@ -257,7 +257,7 @@
 .summary {
   margin: 16px 0 0;
   color: $on-surface-variant;
-  font-size: 14px;
+  font-size: $font-body-md;
   line-height: 1.65;
 }
 

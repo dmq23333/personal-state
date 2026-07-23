@@ -3,7 +3,7 @@
 .home-container {
   background-color: $background;
   color: $on-surface;
-  max-width: 1280px;
+  max-width: $content-max-width;
   margin: 0 auto;
   padding: 0 $spacing-margin;
   display: flex;
@@ -48,14 +48,14 @@
   background-color: $surface-container;
   color: $on-surface;
   padding: $spacing-sm $spacing-md;
-  border-radius: 9999px;
+  border-radius: $radius-full;
   width: fit-content;
   font-size: $font-label-md;
   font-weight: $font-label-md-weight;
   border: 1px solid $outline-variant;
 
   .material-symbols-outlined {
-    font-size: 18px;
+    font-size: $icon-size-18;
   }
 }
 
@@ -117,7 +117,7 @@
 .bento-main {
   grid-row: span 2;
   overflow: hidden;
-  border-radius: 24px;
+  border-radius: $radius-xl;
   padding: 0;
   display: flex;
   align-items: stretch;
@@ -136,7 +136,7 @@
 }
 
 .bento-card {
-  border-radius: 24px;
+  border-radius: $radius-xl;
   padding: $spacing-md;
   display: flex;
   align-items: center;
@@ -212,7 +212,7 @@
 
 .expertise-card {
   padding: $spacing-lg;
-  border-radius: 24px;
+  border-radius: $radius-xl;
   display: flex;
   flex-direction: column;
   gap: $spacing-md;
@@ -246,8 +246,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 12px;
-    font-size: 24px;
+    border-radius: $radius-md;
+    font-size: $icon-size-24;
   }
 
   .card-icon-lg {
@@ -258,11 +258,11 @@
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
-    font-size: 32px;
+    font-size: $icon-size-32;
   }
 
   .icon-lg {
-    font-size: 32px;
+    font-size: $icon-size-32;
     margin-bottom: $spacing-sm;
   }
 
@@ -290,7 +290,7 @@
   .tag {
     padding: $spacing-xs $spacing-md;
     background-color: $surface-container;
-    border-radius: 24px;
+    border-radius: $radius-xl;
     font-size: $font-label-md;
     font-weight: $font-label-md-weight;
     color: $on-surface-variant;
@@ -305,7 +305,7 @@
   gap: $spacing-sm;
   padding: $spacing-md $spacing-lg;
   border: none;
-  border-radius: 16px;
+  border-radius: $radius-lg;
   font-size: $font-label-md;
   font-weight: $font-label-md-weight;
   text-decoration: none;
@@ -315,7 +315,7 @@
   font-family: inherit;
 
   .material-symbols-outlined {
-    font-size: 20px;
+    font-size: $icon-size-20;
   }
 
   &.btn-primary {

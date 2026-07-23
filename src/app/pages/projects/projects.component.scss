@@ -3,7 +3,7 @@
 .projects-container {
   background-color: $background;
   color: $on-surface;
-  max-width: 1280px;
+  max-width: $content-max-width;
   margin: 0 auto;
   padding: 0 $spacing-margin;
 
@@ -90,7 +90,7 @@
 .bento-card {
   background-color: $surface-container-low;
   border: 1px solid rgba($outline-variant, 0.3);
-  border-radius: 16px;
+  border-radius: $radius-lg;
   overflow: hidden;
   transition: all 0.5s ease;
   display: flex;
@@ -196,7 +196,7 @@
     padding: $spacing-xs $spacing-sm;
     background-color: rgba($primary-container, 0.2);
     color: $on-primary-fixed-variant;
-    border-radius: 9999px;
+    border-radius: $radius-full;
     font-size: 11px;
     font-weight: 700;
     text-transform: uppercase;
@@ -241,7 +241,7 @@
   }
 
   .material-symbols-outlined {
-    font-size: 20px;
+    font-size: $icon-size-20;
   }
 }
 
@@ -252,7 +252,7 @@
   gap: $spacing-sm;
   padding: $spacing-md $spacing-lg;
   border: none;
-  border-radius: 9999px;
+  border-radius: $radius-full;
   font-size: $font-label-md;
   font-weight: 700;
   cursor: pointer;

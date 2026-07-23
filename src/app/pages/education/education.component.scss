@@ -4,7 +4,7 @@
   background-color: $background;
   color: $on-surface;
   font-family: $font-family-base;
-  max-width: 1280px;
+  max-width: $content-max-width;
   margin: 0 auto;
   padding: 0 $spacing-margin;
 
@@ -22,7 +22,7 @@
   gap: $spacing-lg;
 
   .hero-icon {
-    font-size: 56px;
+    font-size: $icon-size-56;
     color: $tertiary-container;
   }
 
@@ -64,7 +64,7 @@
       gap: $spacing-sm;
 
       .material-icon {
-        font-size: 28px;
+        font-size: $icon-size-28;
         color: $primary;
       }
 
@@ -136,7 +136,7 @@
         margin-bottom: $spacing-md;
 
         .material-icon {
-          font-size: 28px;
+          font-size: $icon-size-28;
           color: $secondary;
         }
 
@@ -182,7 +182,7 @@
         margin-bottom: $spacing-md;
 
         .material-icon {
-          font-size: 28px;
+          font-size: $icon-size-28;
           color: $tertiary;
         }
 
@@ -241,7 +241,7 @@
     gap: $spacing-sm;
 
     .material-icon {
-      font-size: 28px;
+      font-size: $icon-size-28;
       color: $primary;
     }
   }
@@ -304,7 +304,7 @@
         background-color: $primary-fixed;
         border-radius: $radius-lg;
         color: $primary;
-        font-size: 24px;
+        font-size: $icon-size-24;
       }
 
       .highlight-content {
